@@ -1,0 +1,164 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Arial", Serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+.menuImg {
+  width: 75px;
+  height: 75px;
+}
+
+.navbar {
+  display: grid;
+  // grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+
+  background-color: #3b5998;
+}
+
+.navbarNav {
+  grid-column-start: 3;
+  grid-column-end: 5;
+
+  overflow: hidden;
+  display: grid;
+
+  grid-gap: 5px;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+
+  background-color: green;
+
+  padding: 5px 5px;
+
+  a {
+    display: block;
+
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.1rem;
+
+    background: var(--dark);
+    color: var(--light);
+
+    padding: 0.8rem;
+    box-shadow: var(--shadow);
+  }
+
+  a:hover {
+    background: var(--light);
+    color: var(--dark);
+  }
+}
+
+.sideNav {
+  display: none;
+}
+
+.sideNavNav {
+  display: none;
+}
+
+.btnClose {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar {
+    display: none;
+    grid-gap: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .navbarNav {
+    display: none;
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+
+  .navbarNav ul {
+    display: none;
+    grid-template-columns: 1fr;
+  }
+
+  .sideNav {
+    display: grid;
+
+    height: 100%;
+    width: 200px;
+    // z-index: 1;
+    position: fixed;
+
+    // text-align: left;
+
+    background-color: #111;
+    opacity: 0.9;
+
+    overflow-x: hidden;
+    padding-top: 60px;
+    top: 0;
+    left: 0;
+
+    transition: 0.5s;
+  }
+
+  .sideNavNav {
+    display: grid;
+    // background-color: red;
+
+    list-style: none;
+    overflow: hidden;
+
+    padding: 0px 0px 200px 50px;
+    transition: 1s;
+    a {
+      display: block;
+
+      font-size: 22px;
+      text-decoration: none;
+      color: #ccc;
+
+      padding: 10px 0px 10px 0px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+  }
+
+  .btnClose {
+    display: initial;
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    text-decoration: none;
+    color: red;
+
+    align-self: end;
+    font-size: 40px;
+  }
+}
+
+/*
+    //display
+
+    //grid settings
+
+    //text
+
+    //colors
+
+    //padding and margin
+
+    //stylings
+
+   //animations
+  */
