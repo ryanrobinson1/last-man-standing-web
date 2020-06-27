@@ -4,7 +4,8 @@ import classes from "./About.module.scss";
 function About() {
   return (
     <div className={classes}>
-      <h1>About</h1>
+      <div className={classes.boxTest}>About</div>
+      {/* <h1 className={classes.boxTest}>About</h1> */}
     </div>
   );
 }

@@ -1,0 +1,7 @@
+@import "./utilities.module.scss";
+
+.bg {
+  &.primary {
+    background-color: red;
+  }
+}

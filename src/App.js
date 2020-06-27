@@ -3,17 +3,22 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Navbar from "./Components/Navigation/Navbar";
 import Homepage from "./Components/Main/Homepage/Homepage";
-
+import TestButtons from "./Components/TestComponents/TestButtons/TestButtons";
 //nav
 import Leagues from "./Components/Leagues/Leagues";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
+import TestGrids from "./Components/TestComponents/TestGrids.js/TestGrids";
 
 function App() {
   return (
     <Router>
       <div>
         <Navbar></Navbar>
+        {/* <TestButtons></TestButtons> */}
+        {/* <Homepage></Homepage> */}
+        <TestGrids></TestGrids>
+
         <Switch>
           <Route path="/leagues">
             <Leagues></Leagues>
