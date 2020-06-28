@@ -50,7 +50,7 @@ function Homepage() {
         </div>
       </div> */}
 
-      <div className={`${classes.container} ${classes.container_max_width_40}`}>
+      <div className={`${classes.container} ${classes.container_max_width_60}`}>
         <div className={`${classes.row} ${classes.grid_gap_10px}`}>
           <div
             className={`${classes.col_4} ${classes.margin_y_25px} ${classes.border_thin_radius_10px}`}
@@ -93,17 +93,26 @@ function Homepage() {
           </div>
         </div>
 
-        <div className={`${classes.row} ${classes.grid_gap_10px}`}>
-          <div
-            className={`${classes.row} ${classes.grid_gap_10px} ${classes.center_align}`}
-          >
-            <div className={classes.col_12}>
-              <h1>Fancy Creating Your Own League?</h1>
-              <Link className={`${classes.btn} ${classes.primary}`} to="#">
-                Create A League
-              </Link>
-              <Cards></Cards>
-            </div>
+        <div
+          className={`${classes.row} ${classes.grid_gap_10px} ${classes.center_align}`}
+        >
+          <div className={classes.col_12}>
+            <h1>Fancy Creating Your Own League?</h1>
+            <Link
+              className={`${classes.btn} ${classes.primary} ${classes.button_width_70pc} ${classes.button_center}`}
+              to="#"
+            >
+              Create A League
+            </Link>
+          </div>
+        </div>
+
+        <div
+          className={`${classes.row} ${classes.grid_gap_10px} ${classes.center_align}`}
+        >
+          <div className={classes.col_12}>
+            <h1>Leagues</h1>
+            <Cards></Cards>
           </div>
         </div>
       </div>

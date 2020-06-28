@@ -71,4 +71,21 @@
       background: lighten($btn-dark, 10%);
     }
   }
+
+  &.button_full {
+    display: block;
+  }
+
+  $sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+  $per: "%";
+  @each $size in $sizes {
+    &.button_width_#{$size}pc {
+      width: $size#{$per};
+    }
+  }
+
+  &.button_center {
+    display: block;
+    margin: auto;
+  }
 }

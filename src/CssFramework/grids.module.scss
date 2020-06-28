@@ -3,8 +3,7 @@
   max-width: 100%;
   margin: auto;
 
-  // $sizes: 10\%, 20\%, 30\%, 40\%, 50\%, 60\%, 70\%, 80\%, 90\%, 100\%;
-  $sizes: 10, 20, 30, 40, 50, 60, 70\, 80, 90, 100;
+  $sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
   $per: "%";
   @each $size in $sizes {
     &.container_max_width_#{$size} {
@@ -59,10 +58,19 @@
 }
 
 @media only screen and (max-width: 700px) {
+  .container {
+    $sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+    $per: "%";
+    @each $size in $sizes {
+      &.container_max_width_#{$size} {
+        max-width: 90%;
+      }
+    }
+  }
+
   .row {
     display: grid;
     grid-template-columns: repeat(4, minmax(40px, 1fr));
-    background-color: green;
   }
 
   .row_auto_adjust {
