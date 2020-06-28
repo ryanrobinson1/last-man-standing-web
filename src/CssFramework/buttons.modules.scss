@@ -1,6 +1,6 @@
-@import "./utilities.module.scss";
+@import "./properties.module.scss";
 
-@mixin set-background-colour($text-colour, $btn-colour) {
+@mixin configureButton($text-colour, $btn-colour) {
   text-align: center;
   text-decoration: none;
   //   font-family: Helvetica, Arial, sans-serif;
@@ -11,63 +11,62 @@
   background-color: $btn-colour;
 
   padding: 8px 10px 8px 10px;
-  margin-right: 10px;
 
   border-radius: 5px;
 }
 
 .btn {
   &.primary {
-    @include set-background-colour($text-white, $btn-primary);
+    @include configureButton($text-white, $btn-primary);
     &:hover {
       background: darken($btn-primary, 10%);
     }
   }
 
   &.secondary {
-    @include set-background-colour($text-white, $btn-secondary);
+    @include configureButton($text-white, $btn-secondary);
     &:hover {
       background: darken($btn-secondary, 10%);
     }
   }
 
   &.success {
-    @include set-background-colour($text-white, $btn-success);
+    @include configureButton($text-white, $btn-success);
     &:hover {
       background: darken($btn-success, 10%);
     }
   }
 
   &.danger {
-    @include set-background-colour($text-white, $btn-danger);
+    @include configureButton($text-white, $btn-danger);
     &:hover {
       background: darken($btn-danger, 10%);
     }
   }
 
   &.warning {
-    @include set-background-colour($text-black, $btn-warning);
+    @include configureButton($text-black, $btn-warning);
     &:hover {
       background: darken($btn-warning, 10%);
     }
   }
 
   &.info {
-    @include set-background-colour($text-white, $btn-info);
+    @include configureButton($text-white, $btn-info);
     &:hover {
       background: darken($btn-info, 10%);
     }
   }
 
   &.light {
-    @include set-background-colour($text-black, $btn-light);
+    @include configureButton($text-black, $btn-light);
     &:hover {
       background: darken($btn-light, 10%);
     }
   }
 
   &.dark {
-    @include set-background-colour($text-white, $btn-dark);
+    @include configureButton($text-white, $btn-dark);
     &:hover {
       background: lighten($btn-dark, 10%);
     }

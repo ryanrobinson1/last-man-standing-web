@@ -1,0 +1,29 @@
+@import "../../CssFramework/main.module.scss";
+
+.card {
+  display: grid;
+  max-width: 100%;
+  margin: auto;
+}
+
+.card_row {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.card_button {
+  display: block;
+  margin: 10px auto 0px auto;
+}
+
+.card_button_full {
+  display: block;
+}
+
+@media only screen and (max-width: 700px) {
+  //   .card_row {
+  //     display: grid;
+  //     grid-template-columns: 1fr;
+  //     background-color: green;
+  //   }
+}

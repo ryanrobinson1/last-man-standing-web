@@ -1,15 +1,182 @@
-$header-colour: #a7c8f2;
-$footer-colour: #a7c8f2;
+@import "./properties.module.scss";
 
-$btn-primary: #2099c9;
-$btn-secondary: #a6a4a6;
-$btn-success: #45bf55;
-$btn-danger: #c90610;
-$btn-warning: #f2cb05;
-$btn-info: #286e80;
-$btn-light: #f0f1f2;
-$btn-dark: #212226;
-$btn-link: #286e80;
+//----PADDING----//
+$sizes: 1px, 2px, 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px, 45px, 50px;
 
-$text-white: #f0f1f2;
-$text-black: #212226;
+@each $size in $sizes {
+  .padding_y_#{$size} {
+    padding: $size 0px;
+  }
+}
+
+@each $size in $sizes {
+  .padding_top_#{$size} {
+    padding-top: $size;
+  }
+}
+
+@each $size in $sizes {
+  .padding_bottom_#{$size} {
+    padding-bottom: $size;
+  }
+}
+
+@each $size in $sizes {
+  .padding_x_#{$size} {
+    padding: 0px $size;
+  }
+}
+
+@each $size in $sizes {
+  .padding_right_#{$size} {
+    padding-right: $size;
+  }
+}
+
+@each $size in $sizes {
+  .padding_left_#{$size} {
+    padding-left: $size;
+  }
+}
+
+@each $size in $sizes {
+  .padding_all_#{$size} {
+    padding: $size $size;
+  }
+}
+
+// ----MARGIN----//
+$sizes: 1px, 2px, 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px, 45px, 50px;
+
+@each $size in $sizes {
+  .margin_y_#{$size} {
+    margin: $size 0px;
+  }
+}
+
+@each $size in $sizes {
+  .margin_top_#{$size} {
+    margin-top: $size;
+  }
+}
+
+@each $size in $sizes {
+  .margin_bottom_#{$size} {
+    margin-bottom: $size;
+  }
+}
+
+@each $size in $sizes {
+  .margin_x_#{$size} {
+    margin: 0px $size;
+  }
+}
+
+@each $size in $sizes {
+  .margin_right_#{$size} {
+    margin-right: $size;
+  }
+}
+
+@each $size in $sizes {
+  .margin_left_#{$size} {
+    margin-left: $size;
+  }
+}
+
+@each $size in $sizes {
+  .margin_all_#{$size} {
+    margin: $size $size;
+  }
+}
+
+// ----BORDER----//
+$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
+@each $size in $sizes {
+  .border_thin_radius_#{$size} {
+    border-style: solid;
+    border-width: thin;
+    border-radius: $size;
+  }
+}
+
+$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
+@each $size in $sizes {
+  .border_medium_radius_#{$size} {
+    border-style: solid;
+    border-width: medium;
+    border-radius: $size;
+  }
+}
+
+$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
+@each $size in $sizes {
+  .border_thick_radius_#{$size} {
+    border-style: solid;
+    border-width: thick;
+    border-radius: $size;
+  }
+}
+
+@each $size in $sizes {
+  .border_bottom_#{$size} {
+    border-bottom: $size solid $black;
+  }
+}
+
+// $colours: $header-colour, $footer-colour, $test_colour;
+
+// @each $colour in $colours {
+//   .border_thin_#{$colour} {
+//     border-radius: 8px;
+//     border-style: solid;
+//     border-width: thin;
+//   }
+// }
+
+// ----TEXT ALIGN----//
+.center_align {
+  text-align: center;
+}
+
+.right_align {
+  text-align: right;
+}
+
+.left_align {
+  text-align: left;
+}
+
+.justified {
+  text-align: justify;
+}
+
+// ----IMAGE----//
+$sizes: 128px, 256px, 512px, 1024px;
+
+@each $size in $sizes {
+  .img_#{$size} {
+    width: $size;
+    height: auto;
+    margin: auto;
+  }
+}
+
+.img_full {
+  width: 100%;
+  height: auto;
+}
+
+$sizes: 128px, 256px, 512px, 1024px;
+@each $size in $sizes {
+  .img_restrict_height_#{$size} {
+    height: $size;
+  }
+}
+
+$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
+@each $size in $sizes {
+  .img_radius_#{$size} {
+    border-radius: $size;
+  }
+}

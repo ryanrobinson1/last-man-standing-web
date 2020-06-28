@@ -9,6 +9,7 @@ import Leagues from "./Components/Leagues/Leagues";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import TestGrids from "./Components/TestComponents/TestGrids.js/TestGrids";
+import Cards from "./Components/Cards/Cards";
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
       <div>
         <Navbar></Navbar>
         {/* <TestButtons></TestButtons> */}
-        {/* <Homepage></Homepage> */}
-        <TestGrids></TestGrids>
+        <Homepage></Homepage>
+        {/* <TestGrids></TestGrids> */}
+        {/* <Cards></Cards> */}
 
         <Switch>
           <Route path="/leagues">
