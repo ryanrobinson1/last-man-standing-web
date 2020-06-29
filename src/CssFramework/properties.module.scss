@@ -1,6 +1,8 @@
+//HEADER-FOOTER
 $header-colour: #a7c8f2;
 $footer-colour: #a7c8f2;
 
+//BUTTONS
 $btn-primary: #2099c9;
 $btn-secondary: #a6a4a6;
 $btn-success: #45bf55;
@@ -11,7 +13,18 @@ $btn-light: #f0f1f2;
 $btn-dark: #212226;
 $btn-link: #286e80;
 
+//TEXT
 $text-white: #f0f1f2;
 $text-black: #212226;
 
-$black: #212226;
+//BG
+$bg-black: #212226;
+$bg-white: $btn-light;
+$bg-off-white: rgb(244, 244, 244);
+
+//BORDER
+$border-grey: rgb(87, 87, 87);
+$border-black: rgb(29, 29, 29);
+$border-white: rgb(223, 223, 223);
+
+$box-shadow-grey: rgb(87, 87, 87);

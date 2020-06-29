@@ -1,13 +1,13 @@
+$max-width: 769px;
+
 .container {
   display: grid;
-  max-width: 100%;
-  margin: auto;
 
-  $sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
-  $per: "%";
+  $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px;
   @each $size in $sizes {
     &.container_max_width_#{$size} {
-      max-width: $size#{$per};
+      max-width: $size;
+      margin: auto;
     }
   }
 }
