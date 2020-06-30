@@ -1,58 +1,22 @@
 @import "../../CssFramework/main.module.scss";
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-family: "Arial", Serif;
-  background-color: #f4f4f4;
-  overflow-x: hidden;
-}
-
-.menuImg {
-  width: 75px;
-  height: 75px;
-}
-
-.navbar {
+.navbar_container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  background-color: wheat;
+  max-width: 100%;
+  margin: auto;
 }
 
-.navbarNav {
-  grid-column-start: 3;
-  grid-column-end: 5;
-
-  overflow: hidden;
+.navbar_row {
   display: grid;
+  // grid-template-columns: repeat(12, minmax(10px, 1fr));
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
 
-  grid-gap: 5px;
-  grid-template-columns: repeat(5, 1fr);
-  list-style: none;
-
-  padding: 10px 5px;
-
-  a {
-    display: block;
-
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.1rem;
-
-    background: var(--dark);
-    color: var(--light);
-
-    padding: 0.8rem;
-    box-shadow: var(--shadow);
-  }
-
-  a:hover {
-    background: var(--light);
-    color: var(--dark);
+  $sizes: 10px, 15px, 20px, 25px, 30px 50px;
+  @each $size in $sizes {
+    &_grid_gap_#{$size} {
+      grid-gap: $size;
+    }
   }
 }
 
@@ -68,101 +32,71 @@ body {
   display: none;
 }
 
-.boxTest {
-  display: grid;
-  width: 200px;
-  height: 100vh;
-  background-color: red;
-  transition: 0.5s;
+// @media only screen and (max-width: 500px) {
+//   .navbar {
+//     display: none;
+//     grid-gap: 0;
+//     grid-template-columns: 1fr;
+//   }
 
-  // h1:hover {
-  //   width: 400px;
-  //   color: WHITE;
-  //   transition: 1s;
-  // }
-}
+//   .navbarNav {
+//     display: none;
+//     grid-column-start: 1;
+//     grid-column-end: 1;
+//   }
 
-@media only screen and (max-width: 500px) {
-  .navbar {
-    display: none;
-    grid-gap: 0;
-    grid-template-columns: 1fr;
-  }
+//   .navbarNav ul {
+//     display: none;
+//     grid-template-columns: 1fr;
+//   }
 
-  .navbarNav {
-    display: none;
-    grid-column-start: 1;
-    grid-column-end: 1;
-  }
+//   .sideNav {
+//     display: grid;
 
-  .navbarNav ul {
-    display: none;
-    grid-template-columns: 1fr;
-  }
+//     height: 100%;
+//     width: 200px;
+//     z-index: 1;
+//     position: fixed;
 
-  .sideNav {
-    display: grid;
+//     background-color: #111;
+//     opacity: 0.9;
 
-    height: 100%;
-    width: 200px;
-    z-index: 1;
-    position: fixed;
+//     overflow-x: hidden;
+//     padding-top: 60px;
+//     top: 0;
+//     left: 0;
 
-    background-color: #111;
-    opacity: 0.9;
+//     transition: 0.5s;
+//   }
 
-    overflow-x: hidden;
-    padding-top: 60px;
-    top: 0;
-    left: 0;
+//   .sideNavNav {
+//     display: grid;
 
-    transition: 0.5s;
-  }
+//     list-style: none;
+//     overflow: hidden;
 
-  .sideNavNav {
-    display: grid;
+//     padding: 0px 0px 200px 50px;
 
-    list-style: none;
-    overflow: hidden;
+//     a {
+//       display: block;
 
-    padding: 0px 0px 200px 50px;
+//       font-size: 22px;
+//       text-decoration: none;
+//       color: #ccc;
 
-    a {
-      display: block;
+//       padding: 10px 0px 10px 0px;
+//     }
 
-      font-size: 22px;
-      text-decoration: none;
-      color: #ccc;
+//     a:hover {
+//       background-color: purple;
+//       transition: 5s;
+//     }
+//   }
 
-      padding: 10px 0px 10px 0px;
-    }
-
-    a:hover {
-      background-color: purple;
-      transition: 5s;
-    }
-  }
-
-  .btnClose {
-    display: initial;
-    position: absolute;
-    top: 0;
-    right: 10px;
-  }
-}
-
-/*
-    //display
-
-    //grid settings
-
-    //text
-
-    //colors
-
-    //padding and margin
-
-    //stylings
-
-   //animations
-  */
+//   .btnClose {
+//     display: initial;
+//     position: absolute;
+//     top: 0;
+//     right: 10px;
+//   }
+// }

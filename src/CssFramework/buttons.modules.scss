@@ -3,69 +3,73 @@
 @mixin configureButton($text-colour, $btn-colour) {
   text-align: center;
   text-decoration: none;
-  //   font-family: Helvetica, Arial, sans-serif;
-  font-family: "Helvetica";
   font-weight: 600;
 
   color: $text-colour;
   background-color: $btn-colour;
 
   padding: 8px 10px 8px 10px;
-
   border-radius: 5px;
+  display: inline-block;
+
+  //
+  // width: 100%;
+  overflow: hidden;
+  // white-space: nowrap;
+  // display: block;
 }
 
 .btn {
-  &.primary {
+  &.btn_primary {
     @include configureButton($text-white, $btn-primary);
     &:hover {
       background: darken($btn-primary, 10%);
     }
   }
 
-  &.secondary {
+  &.btn_secondary {
     @include configureButton($text-white, $btn-secondary);
     &:hover {
       background: darken($btn-secondary, 10%);
     }
   }
 
-  &.success {
+  &.btn_success {
     @include configureButton($text-white, $btn-success);
     &:hover {
       background: darken($btn-success, 10%);
     }
   }
 
-  &.danger {
+  &.btn_danger {
     @include configureButton($text-white, $btn-danger);
     &:hover {
       background: darken($btn-danger, 10%);
     }
   }
 
-  &.warning {
+  &.btn_warning {
     @include configureButton($text-black, $btn-warning);
     &:hover {
       background: darken($btn-warning, 10%);
     }
   }
 
-  &.info {
+  &.btn_info {
     @include configureButton($text-white, $btn-info);
     &:hover {
       background: darken($btn-info, 10%);
     }
   }
 
-  &.light {
+  &.btn_light {
     @include configureButton($text-black, $btn-light);
     &:hover {
       background: darken($btn-light, 10%);
     }
   }
 
-  &.dark {
+  &.btn_dark {
     @include configureButton($text-white, $btn-dark);
     &:hover {
       background: lighten($btn-dark, 10%);

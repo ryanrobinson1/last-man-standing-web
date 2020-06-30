@@ -32,28 +32,7 @@ up. Is it a winner takes all jobby, or 1st (75% of the pot), 2nd
 function Homepage() {
   return (
     <div>
-      {/* <div
-        className={`${classes.container} ${classes.container_max_width_100}`}
-      >
-        <div className={`${classes.row}`}>
-          <div
-            className={`${classes.col_4} ${classes.margin_y_25px} ${classes.border_thin_radius_10px}`}
-          >
-            <h1> This will be in the intro / pitch text.</h1>
-            <p> Quick introduction to what the product is</p>
-          </div>
-          <div className={`${classes.col_8} ${classes.margin_y_25px}`}>
-            <img
-              className={`${classes.img_full} ${classes.img_restrict_height_512px} ${classes.img_radius_10px} `}
-              src={lmsImage}
-            ></img>
-          </div>
-        </div>
-      </div> */}
-
-      <div
-        className={`${classes.container} ${classes.container_max_width_1280px} ${classes.margin_all_10px}`}
-      >
+      <div className={` ${classes.container_max_width_1280px}`}>
         <div
           className={`${classes.row} ${classes.grid_gap_10px} ${classes.margin_y_25px} ${classes.margin_all_10px}`} //extra 10 margin to align with the cards
         >
@@ -79,18 +58,18 @@ function Homepage() {
           </div>
         </div>
 
-        <div className={`${classes.row} ${classes.center_align}`}>
-          <div className={classes.col_4}>
+        <div className={`${classes.row} ${classes.center_align} `}>
+          <div className={`${classes.col_4} ${classes.expand_animation}`}>
             <h1>How To Play: 1</h1>
             <Cards></Cards>
           </div>
 
-          <div className={classes.col_4}>
+          <div className={`${classes.col_4} ${classes.expand_animation}`}>
             <h1>How To Play: 2</h1>
             <Cards></Cards>
           </div>
 
-          <div className={classes.col_4}>
+          <div className={`${classes.col_4} ${classes.expand_animation}`}>
             <h1>How To Play: 3</h1>
             <Cards></Cards>
           </div>
@@ -102,7 +81,7 @@ function Homepage() {
           <div className={`${classes.col_12} ${classes.margin_bottom_50px}`}>
             <h1>Fancy Creating Your Own League?</h1>
             <Link
-              className={`${classes.btn} ${classes.primary} ${classes.button_width_50pc} ${classes.button_center}`}
+              className={`${classes.btn} ${classes.btn_primary} ${classes.button_width_50pc} ${classes.button_center}`}
               to="#"
             >
               Create A League

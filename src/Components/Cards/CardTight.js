@@ -27,7 +27,7 @@ function CardsTight() {
           change this later
         </p>
         <Link
-          className={`${classes.btn} ${classes.warning} ${classes.card_button}`}
+          className={`${classes.btn} ${classes.btn_warning} ${classes.card_button}`}
           to="#"
         >
           Read More

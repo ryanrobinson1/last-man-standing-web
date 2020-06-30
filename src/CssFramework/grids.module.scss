@@ -1,11 +1,15 @@
 $max-width: 769px;
 
 .container {
-  display: grid;
+  // display: grid;
 
-  $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px;
+  $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
   @each $size in $sizes {
-    &.container_max_width_#{$size} {
+    @if $size == "100" {
+      $size: $size#{$per};
+    }
+    &_max_width_#{$size} {
+      display: grid;
       max-width: $size;
       margin: auto;
     }
@@ -14,12 +18,21 @@ $max-width: 769px;
 
 .row {
   display: grid;
-  grid-template-columns: repeat(12, minmax(50px, 1fr));
-
+  // grid-template-columns: repeat(12, minmax(50px, 1fr));
+  grid-template-columns: repeat(12, 1fr);
   $sizes: 10px, 15px, 20px, 25px, 30px 50px;
   @each $size in $sizes {
     &.grid_gap_#{$size} {
       grid-gap: $size;
+    }
+  }
+}
+
+.container_row_height {
+  $sizes: 250px, 200px, 150px, 100px, 50px;
+  @each $size in $sizes {
+    &_#{$size} {
+      height: $size;
     }
   }
 }

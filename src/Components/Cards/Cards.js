@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import testImage from "../../logo.svg";
 import lmsImage from "../../Components/Main/Homepage/last-man-standing.png";
 
-function Cards() {
+function Cards(props) {
   return (
     <div className={`${classes.card}`}>
       <div
@@ -29,7 +29,7 @@ function Cards() {
           change this later
         </p>
         <Link
-          className={`${classes.btn} ${classes.warning} ${classes.card_button}`}
+          className={`${classes.btn} ${classes.btn_warning} ${classes.card_button}`}
           to="#"
         >
           Read More
