@@ -10,13 +10,8 @@
 
   padding: 8px 10px 8px 10px;
   border-radius: 5px;
-  display: inline-block;
 
-  //
-  // width: 100%;
   overflow: hidden;
-  // white-space: nowrap;
-  // display: block;
 }
 
 .btn {
@@ -88,8 +83,30 @@
     }
   }
 
-  &.button_center {
-    display: block;
+  &.btn_center {
+    display: inline-block;
     margin: auto;
+  }
+
+  &.btn_small {
+    padding: 4px 5px;
+  }
+
+  &.btn_medium {
+    padding: 10px 12px;
+  }
+
+  &.btn_large {
+    padding: 12px 14px;
+  }
+
+  &.btn_x_large {
+    padding: 14px 16px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .mobile_btn_full {
+    display: block;
   }
 }

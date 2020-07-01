@@ -8,7 +8,6 @@
 
 .navbar_row {
   display: grid;
-  // grid-template-columns: repeat(12, minmax(10px, 1fr));
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
 
@@ -20,16 +19,28 @@
   }
 }
 
-.sideNav {
+.mobile_side_navbar_container {
   display: none;
 }
 
-.sideNavNav {
-  display: none;
+.navbar_button {
+  display: inline-block;
+  margin: 10px auto 0px auto;
 }
 
-.btnClose {
-  display: none;
+@media only screen and (max-width: 700px) {
+  .mobile_navbar_container {
+    display: none;
+  }
+
+  .mobile_side_navbar_container {
+    display: grid;
+  }
+
+  .mobile_side_navbar_row_styling {
+    width: 350px;
+    background-color: $bg-dark;
+  }
 }
 
 // @media only screen and (max-width: 500px) {

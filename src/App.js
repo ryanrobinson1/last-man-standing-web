@@ -16,11 +16,7 @@ function App() {
     <Router>
       <div>
         <Navbar></Navbar>
-        {/* <TestButtons></TestButtons> */}
         <Homepage></Homepage>
-        {/* <TestGrids></TestGrids> */}
-        {/* <Cards></Cards> */}
-
         <Switch>
           <Route path="/leagues">
             <Leagues></Leagues>
