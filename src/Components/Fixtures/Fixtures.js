@@ -1,20 +1,20 @@
 import React from "react";
-import classes from "./Leagues.module.scss";
+import classes from "./Fixtures.module.scss";
 import { Link } from "react-router-dom";
 import menu from "../../logo.svg";
 
 import endpoints from "../../utilities/utils";
 
-function Leagues() {
+function Fixtures() {
   return (
     <div className={`${classes.container_max_width_1280px}`}>
       <div className={`${classes.row}`}>
         <div className={`${classes.col_12}`}>
-          <h1>Leagues</h1>
+          <h1>Fixtures</h1>
         </div>
       </div>
     </div>
   );
 }
 
-export default Leagues;
+export default Fixtures;

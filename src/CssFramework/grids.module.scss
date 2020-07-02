@@ -1,8 +1,7 @@
 $max-width: 769px;
 
 .container {
-  $sizes: 350px, 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px,
-    1920px 100;
+  $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
   @each $size in $sizes {
     @if $size == "100" {
       $size: $size#{$per};
@@ -11,6 +10,29 @@ $max-width: 769px;
       display: grid;
       max-width: $size;
       margin: auto;
+    }
+  }
+}
+
+.container_not_centered {
+  $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
+  @each $size in $sizes {
+    @if $size == "100" {
+      $size: $size#{$per};
+    }
+    &_width_#{$size} {
+      display: grid;
+      max-width: $size;
+    }
+  }
+}
+
+.container_width {
+  $sizes: 0px, 100px, 200px, 250px, 300px, 350px, 400px, 450px, 500px, 750px,
+    1000px;
+  @each $size in $sizes {
+    &_#{$size} {
+      width: $size;
     }
   }
 }
@@ -28,7 +50,8 @@ $max-width: 769px;
 }
 
 .container_row_height {
-  $sizes: 250px, 200px, 150px, 100px, 80px, 70px, 60px, 50px;
+  $sizes: 50px, 60px, 70px, 80px, 90px, 100px, 110px, 120px, 130px, 140px, 150px,
+    160px;
   @each $size in $sizes {
     &_#{$size} {
       height: $size;

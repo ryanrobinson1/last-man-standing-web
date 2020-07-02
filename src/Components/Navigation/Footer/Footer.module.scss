@@ -1,6 +1,6 @@
-@import "../../CssFramework/main.module.scss";
+@import "../../../CssFramework/main.module.scss";
 
-.navbar_container {
+.footer_container {
   display: grid;
   $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
   @each $size in $sizes {
@@ -15,9 +15,9 @@
   }
 }
 
-.navbar_row {
+.footer_row {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   $sizes: 10px, 15px, 20px, 25px, 30px 50px;
   @each $size in $sizes {
     &.grid_gap_#{$size} {
@@ -34,7 +34,23 @@
   display: none;
 }
 
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-gap: 40px;
+  margin-top: 20px;
+}
+
+a {
+  display: block;
+  color: $btn-light;
+}
+
 @media only screen and (max-width: 700px) {
+  .mobile_footer_height_increase {
+    height: 100%;
+  }
+
   .hide_desktop_navbar_container {
     display: none;
   }
@@ -97,72 +113,3 @@
     display: block;
   }
 }
-
-// @media only screen and (max-width: 500px) {
-//   .navbar {
-//     display: none;
-//     grid-gap: 0;
-//     grid-template-columns: 1fr;
-//   }
-
-//   .navbarNav {
-//     display: none;
-//     grid-column-start: 1;
-//     grid-column-end: 1;
-//   }
-
-//   .navbarNav ul {
-//     display: none;
-//     grid-template-columns: 1fr;
-//   }
-
-//   .sideNav {
-//     display: grid;
-
-//     height: 100%;
-//     width: 200px;
-//     z-index: 1;
-//     position: fixed;
-
-//     background-color: #111;
-//     opacity: 0.9;
-
-//     overflow-x: hidden;
-//     padding-top: 60px;
-//     top: 0;
-//     left: 0;
-
-//     transition: 0.5s;
-//   }
-
-//   .sideNavNav {
-//     display: grid;
-
-//     list-style: none;
-//     overflow: hidden;
-
-//     padding: 0px 0px 200px 50px;
-
-//     a {
-//       display: block;
-
-//       font-size: 22px;
-//       text-decoration: none;
-//       color: #ccc;
-
-//       padding: 10px 0px 10px 0px;
-//     }
-
-//     a:hover {
-//       background-color: purple;
-//       transition: 5s;
-//     }
-//   }
-
-//   .btnClose {
-//     display: initial;
-//     position: absolute;
-//     top: 0;
-//     right: 10px;
-//   }
-// }

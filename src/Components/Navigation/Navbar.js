@@ -1,73 +1,79 @@
-import React from "react";
+import React, { Fragment } from "react";
 import classes from "./Navbar.module.scss";
 import { Link } from "react-router-dom";
 import menu from "../../logo.svg";
-import Card from "../Cards/Cards";
 
-// const closeMobileNav = () => {
-//   const mobileNavId = document.getElementById("mobileNavId");
+import endpoints from "../../utilities/utils";
 
-//   if (mobileNavId.style.width === "200px") {
-//     mobileNavId.style.width = "0px";
-//   } else {
-//     mobileNavId.style.width = "200px";
-//   }
-// };
+const resetMobileMenu = () => {
+  if (window.innerWidth > 700) {
+    const mobileNavId = document.getElementById("mobileNavId");
+    mobileNavId.style.width = "0px";
+  }
+};
 
-// const resetMobileMenu = () => {
-//   if (window.innerWidth > 400) {
-//     const mobileNavId = document.getElementById("mobileNavId");
-//     mobileNavId.style.width = "0px";
-//   }
-// };
+const closeMobileNav = () => {
+  const width = "200px";
+  const zero = "0px";
+  const mobileNavId = document.getElementById("mobileNavId");
 
-// window.addEventListener("resize", resetMobileMenu);
+  if (mobileNavId.style.width === "") {
+    console.log("blank");
+    mobileNavId.style.width = width;
+    return;
+  }
+
+  if (mobileNavId.style.width === zero) {
+    mobileNavId.style.width = width;
+  } else if (mobileNavId.style.width === width) {
+    mobileNavId.style.width = zero;
+  }
+};
+
+window.addEventListener("resize", resetMobileMenu);
 
 function Navbar() {
   const mainNavBar = () => {
     return (
       <div
-        className={`${classes.container_max_width_100} ${classes.bg_dark} ${classes.mobile_navbar_container}`}
+        className={`${classes.container_max_width_100} ${classes.bg_grey} ${classes.hide_desktop_navbar_container}`}
       >
-        <div className={`${classes.container_row_height_80px}`}>
+        <div className={`${classes.container_row_height_100px}`}>
           <div className={`${classes.container_max_width_1280px}`}>
             <div className={`${classes.margin_top_20px}`}>
               <div className={`${classes.row}`}>
-                <div className={`${classes.col_4}`}></div>
-                <div className={`${classes.col_8}`}>
+                <div className={`${classes.col_6}`}></div>
+                <div className={`${classes.col_6}`}>
                   <div className={`${classes.navbar_container}`}>
                     <div
-                      className={`${classes.navbar_row} ${classes.navbar_row_grid_gap_10px}`}
+                      className={`${classes.navbar_row} ${classes.grid_gap_10px}`}
                     >
+                      <div className={`${classes.col_2}`}></div>
+
                       <div
                         className={`${classes.col_2} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}
                       >
-                        <Link to="#">Leagues</Link>
+                        <Link to={endpoints.login}>Login</Link>
                       </div>
                       <div
                         className={`${classes.col_2} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}
                       >
-                        <Link to="#">Leagues</Link>
-                      </div>{" "}
+                        <Link to={endpoints.register}>Register</Link>
+                      </div>
                       <div
                         className={`${classes.col_2} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}
                       >
-                        <Link to="#">Leagues</Link>
-                      </div>{" "}
+                        <Link to={endpoints.leagues}>Leagues</Link>
+                      </div>
                       <div
                         className={`${classes.col_2} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}
                       >
-                        <Link to="#">Leagues</Link>
-                      </div>{" "}
+                        <Link to={endpoints.fixtures}>Fixtures</Link>
+                      </div>
                       <div
                         className={`${classes.col_2} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}
                       >
-                        <Link to="#">Leagues</Link>
-                      </div>{" "}
-                      <div
-                        className={`${classes.col_2} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}
-                      >
-                        <Link to="#">Leagues</Link>
+                        <Link to={endpoints.dataCenter}>Data</Link>
                       </div>
                     </div>
                   </div>
@@ -81,45 +87,52 @@ function Navbar() {
   };
 
   const sideNavBar = () => {
-    const dummyLink = () => {
-      return (
-        <div className={`${classes.row} ${classes.grid_gap_10px} `}>
-          <div className={`${classes.col_1}`}>
-            <div
-              className={`${classes.btn} ${classes.btn_primary} ${classes.btn_x_large} ${classes.navbar_button}`}
-            >
-              <Link to="#">Link 1</Link>
+    return (
+      <Fragment>
+        <Link
+          className={classes.navbar_menu_btn}
+          to="#"
+          onClick={closeMobileNav}
+        >
+          <img
+            className={`${classes.img_128px} ${classes.navbar_img}`}
+            src={menu}
+            alt="image"
+          ></img>
+        </Link>
+
+        <div className={`${classes.navbar_mobile_container}`} id="mobileNavId">
+          <div className={`${classes.navbar_mobile_row}`}>
+            <div className={`${classes.navbar_mobile_col_1}`}>
+              <ul className={`${classes.ul}`}>
+                <li>
+                  <Link to={endpoints.login}>Login</Link>
+                </li>
+                <li>
+                  <Link to={endpoints.register}>Register</Link>
+                </li>
+                <li>
+                  <Link to={endpoints.leagues}>Leagues</Link>
+                </li>
+                <li>
+                  <Link to={endpoints.fixtures}>Fixtures</Link>
+                </li>
+                <li>
+                  <Link to={endpoints.data}>Coming soon.. Data</Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      );
-    };
-
-    return (
-      <div>
-        <div
-          className={` ${classes.container_max_width_1280px} ${classes.mobile_side_navbar_container} ${classes.container_max_height}`}
-        >
-          <div className={`${classes.mobile_side_navbar_row_styling}`}>
-            {dummyLink()}
-            {dummyLink()}
-            {dummyLink()}
-            {dummyLink()}
-            {dummyLink()}
-            {dummyLink()}
-            {dummyLink()}
-          </div>
-        </div>
-      </div>
+      </Fragment>
     );
   };
 
   return (
-    <div>
+    <Fragment>
       {mainNavBar()}
-
-      <div>{sideNavBar()}</div>
-    </div>
+      {sideNavBar()}
+    </Fragment>
   );
 }
 
@@ -180,3 +193,33 @@ export default Navbar;
 //   </ul>
 // </div>
 // </nav>
+
+{
+  /* <div
+            className={`${classes.container_not_centered_width_1280px} ${classes.container_width_200px} ${classes.mobile_side_navbar_container} ${classes.container_max_height}`}
+            id="mobileNavBody"
+          >
+            <div
+              className={`${classes.mobile_side_navbar_row_styling}`}
+              id="mobileNavBackground"
+            >
+              <div className={`${classes.row} ${classes.grid_gap_10px} `}>
+                <div className={`${classes.col_1}`}>
+                  <div>
+                    <ul>
+                      <li>
+                        <Link to="#">Link 1</Link>
+                      </li>{" "}
+                      <li>
+                        <Link to="#">Link 1</Link>
+                      </li>{" "}
+                      <li>
+                        <Link to="#">Link 1</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */
+}

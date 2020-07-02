@@ -32,7 +32,9 @@ up. Is it a winner takes all jobby, or 1st (75% of the pot), 2nd
 function Homepage() {
   return (
     <div>
-      <div className={` ${classes.container_max_width_1280px}`}>
+      <div
+        className={` ${classes.container_max_width_1280px} ${classes.mobile_container_margin}`}
+      >
         <div
           className={`${classes.row} ${classes.grid_gap_10px} ${classes.margin_y_25px} ${classes.margin_all_10px}`} //extra 10 margin to align with the cards
         >
