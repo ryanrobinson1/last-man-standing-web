@@ -1,0 +1,104 @@
+// ----BORDER----//
+// ----SIZES----//
+$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
+@each $size in $sizes {
+  .border_thin_radius_#{$size} {
+    border-style: solid;
+    border-width: thin;
+    border-radius: $size;
+    border-color: transparent;
+  }
+}
+
+$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
+@each $size in $sizes {
+  .border_medium_radius_#{$size} {
+    border-style: solid;
+    border-width: medium;
+    border-radius: $size;
+    border-color: transparent;
+  }
+}
+
+$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
+@each $size in $sizes {
+  .border_thick_radius_#{$size} {
+    border-style: solid;
+    border-width: thick;
+    border-radius: $size;
+    border-color: transparent;
+  }
+}
+
+//----INDIVIDUAL BORDER----//
+//.border_control_left_25px
+.border_control {
+  @each $radii in $radius-border {
+    &_left_#{$radii} {
+      border-style: solid;
+      border-width: thin;
+      border-color: transparent;
+
+      border-bottom-left-radius: $radii;
+      border-top-left-radius: $radii;
+    }
+
+    &_right_#{$radii} {
+      border-style: solid;
+      border-width: thin;
+      border-color: transparent;
+
+      border-bottom-right-radius: $radii;
+      border-top-right-radius: $radii;
+    }
+  }
+
+  //   &_left {
+  //     border-bottom-left-radius: $radius;
+  //     border-top-left-radius: $radius;
+  //   }
+
+  //   &_right {
+  //     border-bottom-right-radius: $radius;
+  //     border-top-right-radius: $radius;
+  //   }
+}
+
+//----COLOURS----//
+$colors: red, orange, yellow, green, blue, indigo, violet, black, grey, white;
+@each $color in $colors {
+  .border_color_#{$color} {
+    @if $color == "black" {
+      $color: $border-black;
+    }
+    @if $color == "grey" {
+      $color: $border-grey;
+    }
+    @if $color == "white" {
+      $color: $border-white;
+    }
+
+    border-color: $color;
+  }
+}
+
+@each $size in $sizes {
+  .border_bottom_#{$size} {
+    border-bottom: $size solid $border-grey;
+  }
+}
+
+//----SHADOW----//
+$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
+@each $size in $sizes {
+  .box_shadow_#{$size} {
+    box-shadow: $size $size 15px -4px $box-shadow-grey;
+  }
+}
+
+$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
+@each $size in $sizes {
+  .box_shadow_top_bottom_#{$size} {
+    box-shadow: 0px $size 15px -4px $box-shadow-grey;
+  }
+}

@@ -46,7 +46,8 @@ $sizes: 1px, 2px, 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px, 45px, 50px;
 }
 
 // ----MARGIN----//
-$sizes: 1px, 2px, 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px, 45px, 50px;
+$sizes: 1px, 2px, 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px, 45px, 50px,
+  75px, 85px, 90px, 100px, 125px, 150px;
 
 @each $size in $sizes {
   .margin_y_#{$size} {
@@ -89,96 +90,6 @@ $sizes: 1px, 2px, 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px, 45px, 50px;
     margin: $size $size;
   }
 }
-
-// ----BORDER----//
-// ----SIZES----//
-$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
-@each $size in $sizes {
-  .border_thin_radius_#{$size} {
-    border-style: solid;
-    border-width: thin;
-    border-radius: $size;
-    border-color: transparent;
-  }
-}
-
-$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
-@each $size in $sizes {
-  .border_medium_radius_#{$size} {
-    border-style: solid;
-    border-width: medium;
-    border-radius: $size;
-    border-color: transparent;
-  }
-}
-
-$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
-@each $size in $sizes {
-  .border_thick_radius_#{$size} {
-    border-style: solid;
-    border-width: thick;
-    border-radius: $size;
-    border-color: transparent;
-  }
-}
-//----COLOURS----//
-$colors: red, orange, yellow, green, blue, indigo, violet, black, grey, white;
-@each $color in $colors {
-  .border_color_#{$color} {
-    @if $color == "black" {
-      $color: $border-black;
-    }
-    @if $color == "grey" {
-      $color: $border-grey;
-    }
-    @if $color == "white" {
-      $color: $border-white;
-    }
-
-    border-color: $color;
-  }
-}
-
-@each $size in $sizes {
-  .border_thick_radius_#{$size} {
-    border-style: solid;
-    border-width: thick;
-    border-radius: $size;
-    border-color: transparent;
-  }
-}
-
-@each $size in $sizes {
-  .border_bottom_#{$size} {
-    border-bottom: $size solid $border-grey;
-  }
-}
-
-//----SHADOW----//
-
-$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
-@each $size in $sizes {
-  .box_shadow_#{$size} {
-    box-shadow: $size $size 15px -4px $box-shadow-grey;
-  }
-}
-
-$sizes: 1px, 2px, 3px, 4px, 5px, 6px, 7px, 8px, 9px, 10px, 15px, 20px;
-@each $size in $sizes {
-  .box_shadow_top_bottom_#{$size} {
-    box-shadow: 0px $size 15px -4px $box-shadow-grey;
-  }
-}
-
-// $colours: $header-colour, $footer-colour, $test_colour;
-
-// @each $colour in $colours {
-//   .border_thin_#{$colour} {
-//     border-radius: 8px;
-//     border-style: solid;
-//     border-width: thin;
-//   }
-// }
 
 // ----TEXT ALIGN----//
 .center_align {

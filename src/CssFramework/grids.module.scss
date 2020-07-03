@@ -1,9 +1,11 @@
+@import "./properties.module.scss";
+
 $max-width: 769px;
 
 .container {
   $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
   @each $size in $sizes {
-    @if $size == "100" {
+    @if $size == 100 {
       $size: $size#{$per};
     }
     &_max_width_#{$size} {
@@ -17,7 +19,7 @@ $max-width: 769px;
 .container_not_centered {
   $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
   @each $size in $sizes {
-    @if $size == "100" {
+    @if $size == 100 {
       $size: $size#{$per};
     }
     &_width_#{$size} {
@@ -39,11 +41,26 @@ $max-width: 769px;
 
 .row {
   display: grid;
-  // grid-template-columns: repeat(12, minmax(50px, 1fr));
   grid-template-columns: repeat(12, 1fr);
+
   $sizes: 10px, 15px, 20px, 25px, 30px 50px;
   @each $size in $sizes {
     &.grid_gap_#{$size} {
+      grid-gap: $size;
+    }
+  }
+
+  $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+  @each $column in $columns {
+    &_columns_#{$column} {
+      display: grid;
+      grid-template-columns: repeat($column, 1fr);
+    }
+  }
+
+  $sizes: 10px, 15px, 20px, 25px, 30px 50px;
+  @each $size in $sizes {
+    &_grid_gap_#{$size} {
       grid-gap: $size;
     }
   }
@@ -51,9 +68,12 @@ $max-width: 769px;
 
 .container_row_height {
   $sizes: 50px, 60px, 70px, 80px, 90px, 100px, 110px, 120px, 130px, 140px, 150px,
-    160px;
+    160px, 100;
   @each $size in $sizes {
     &_#{$size} {
+      @if $size == 100 {
+        $size: $size#{$per};
+      }
       height: $size;
     }
   }
@@ -92,6 +112,10 @@ $max-width: 769px;
   grid-column: span 1;
 }
 
+.col_flex {
+  display: flex;
+}
+
 @media only screen and (max-width: 700px) {
   .container {
     $sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
@@ -110,6 +134,15 @@ $max-width: 769px;
   .row {
     display: grid;
     grid-template-columns: repeat(1, minmax(40px, 1fr));
+
+    $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+    @each $column in $columns {
+      &_columns_#{$column} {
+        display: grid;
+        // grid-template-columns: repeat($column, 1fr);
+        grid-template-columns: 1fr;
+      }
+    }
   }
 
   // .row_auto_adjust {

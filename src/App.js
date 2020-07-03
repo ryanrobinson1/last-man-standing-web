@@ -9,7 +9,7 @@ import Footer from "./Components/Navigation/Footer/Footer";
 
 //pages
 import Homepage from "./Components/Main/Homepage/Homepage";
-import Login from "./Components/Auth/Login/Login";
+import LoginRegister from "./Components/Auth/Login/LoginRegister";
 import Register from "./Components/Auth/Register/Register";
 import Leagues from "./Components/Leagues/Leagues";
 import Fixtures from "./Components/Fixtures/Fixtures";
@@ -25,7 +25,13 @@ function App() {
 
       <Switch>
         <Route path={endpoints.root} exact component={Homepage} />
-        <Route path={endpoints.login} exact component={Login} />
+        {/* <Route path={endpoints.login} exact component={LoginRegister} /> */}
+        <Route path={endpoints.register} exact>
+          <LoginRegister isLoginRegister="register"></LoginRegister>
+        </Route>
+        <Route path={endpoints.login} exact>
+          <LoginRegister isLoginRegister="login"></LoginRegister>
+        </Route>
         <Route path={endpoints.register} exact component={Register} />
         <Route path={endpoints.leagues} exact component={Leagues} />
         <Route path={endpoints.fixtures} exact component={Fixtures} />

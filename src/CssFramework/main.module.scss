@@ -2,6 +2,7 @@
 
 @import "./backgrounds.module.scss";
 @import "./buttons.modules.scss";
+@import "./borders.module.scss";
 
 @import "./properties.module.scss";
 @import "./utilities.module.scss";
@@ -41,4 +42,18 @@ ul {
 
 body {
   background-color: $bg-off-white;
+}
+
+input {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+input[type="submit"] {
+  border-color: transparent;
+}
+
+label {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }

@@ -1,6 +1,10 @@
 @import "./utilities.module.scss";
 
 .bg {
+  &_off_white {
+    background-color: $bg-off-white;
+  }
+
   &_primary {
     background-color: $header-colour;
   }
@@ -11,5 +15,9 @@
 
   &_grey {
     background-color: $bg-grey;
+  }
+
+  &_light_grey {
+    background-color: $bg-light-grey;
   }
 }

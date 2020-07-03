@@ -40,7 +40,9 @@ function Navbar() {
       >
         <div className={`${classes.container_row_height_100px}`}>
           <div className={`${classes.container_max_width_1280px}`}>
-            <div className={`${classes.margin_top_20px}`}>
+            <div
+              className={`${classes.margin_top_20px}  ${classes.margin_bottom_20px}`}
+            >
               <div className={`${classes.row}`}>
                 <div className={`${classes.col_6}`}></div>
                 <div className={`${classes.col_6}`}>
@@ -48,7 +50,11 @@ function Navbar() {
                     <div
                       className={`${classes.navbar_row} ${classes.grid_gap_10px}`}
                     >
-                      <div className={`${classes.col_2}`}></div>
+                      <div
+                        className={`${classes.col_2}  ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}
+                      >
+                        <Link to={endpoints.root}>Home</Link>
+                      </div>
 
                       <div
                         className={`${classes.col_2} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}
@@ -89,22 +95,33 @@ function Navbar() {
   const sideNavBar = () => {
     return (
       <Fragment>
-        <Link
-          className={classes.navbar_menu_btn}
-          to="#"
-          onClick={closeMobileNav}
+        <div
+          className={` ${classes.container_max_width_1280px} ${classes.bg_dark}`}
         >
-          <img
-            className={`${classes.img_128px} ${classes.navbar_img}`}
-            src={menu}
-            alt="image"
-          ></img>
-        </Link>
+          <div className={`${classes.row_columns_1} ${classes.navbar_height}`}>
+            <div className={`${classes.col_1}`}>
+              <Link
+                className={classes.navbar_menu_btn}
+                to="#"
+                onClick={closeMobileNav}
+              >
+                <img
+                  className={`${classes.img_128px} ${classes.navbar_img}`}
+                  src={menu}
+                  alt="image"
+                ></img>
+              </Link>
+            </div>
+          </div>
+        </div>
 
         <div className={`${classes.navbar_mobile_container}`} id="mobileNavId">
           <div className={`${classes.navbar_mobile_row}`}>
             <div className={`${classes.navbar_mobile_col_1}`}>
               <ul className={`${classes.ul}`}>
+                <li>
+                  <Link to={endpoints.root}>Home</Link>
+                </li>
                 <li>
                   <Link to={endpoints.login}>Login</Link>
                 </li>
@@ -129,10 +146,10 @@ function Navbar() {
   };
 
   return (
-    <Fragment>
+    <div id="navigation">
       {mainNavBar()}
       {sideNavBar()}
-    </Fragment>
+    </div>
   );
 }
 
