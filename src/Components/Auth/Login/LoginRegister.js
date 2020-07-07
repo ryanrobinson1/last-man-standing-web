@@ -9,11 +9,18 @@ import Cards from "../../Cards/Cards";
 import LoginForm from "../../Forms/LoginForm/LoginForm";
 import RegisterForm from "../../Forms/RegisterForm/RegisterForm";
 
+import { connect } from "react-redux";
+import { setAlert } from "../../../Actions/setAlertAction";
+
+let loginState = "";
+
 function LoginRegister(props) {
+  const { setAlert, isLoginRegister, alert } = props;
+
   let loginOrRegisterText = "";
 
   const loginOrRegister = () => {
-    if (props.isLoginRegister === "login") {
+    if (isLoginRegister === "login") {
       loginOrRegisterText = "login";
       return <LoginForm />;
     } else {
@@ -22,8 +29,34 @@ function LoginRegister(props) {
     }
   };
 
+  const sendAlertSuccess = () => {
+    setAlert("cunt success");
+  };
+
+  const sendAlertFailure = () => {
+    setAlert();
+  };
+
+  const showLoggedInDashboard = () => {
+    console.log("this is the state of alert: ", alert);
+  };
+
   return (
     <div id={loginOrRegisterText}>
+      <Link
+        className={`${classes.btn} ${classes.btn_primary}`}
+        onClick={sendAlertSuccess}
+      >
+        send alert: success
+      </Link>
+      <Link
+        className={`${classes.btn} ${classes.btn_danger}`}
+        onClick={sendAlertFailure}
+      >
+        {" "}
+        send alert: fail{" "}
+      </Link>
+      {showLoggedInDashboard()}
       <div
         className={`${classes.container_max_width_100} ${classes.bg_light_grey}`}
       >
@@ -56,4 +89,16 @@ function LoginRegister(props) {
   );
 }
 
-export default LoginRegister;
+const mapStateToProps = (state) => {
+  return { alert: state.alert };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setAlert: function (msg) {
+      dispatch(setAlert(msg));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginRegister);

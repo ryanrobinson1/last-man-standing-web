@@ -3,6 +3,10 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import endpoints from "./utilities/utils";
 
+//redux
+import store from "./Store/store";
+import { Provider } from "react-redux";
+
 //header and footer
 import Navbar from "./Components/Navigation/Navbar";
 import Footer from "./Components/Navigation/Footer/Footer";
@@ -20,29 +24,31 @@ import Contact from "./Components/Contact/Contact";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
+    <Provider store={store}>
+      <Router>
+        <Navbar />
 
-      <Switch>
-        <Route path={endpoints.root} exact component={Homepage} />
-        {/* <Route path={endpoints.login} exact component={LoginRegister} /> */}
-        <Route path={endpoints.register} exact>
-          <LoginRegister isLoginRegister="register"></LoginRegister>
-        </Route>
-        <Route path={endpoints.login} exact>
-          <LoginRegister isLoginRegister="login"></LoginRegister>
-        </Route>
-        <Route path={endpoints.register} exact component={Register} />
-        <Route path={endpoints.leagues} exact component={Leagues} />
-        <Route path={endpoints.fixtures} exact component={Fixtures} />
-        <Route path={endpoints.dataCenter} exact component={DataCenter} />
+        <Switch>
+          <Route path={endpoints.root} exact component={Homepage} />
+          {/* <Route path={endpoints.login} exact component={LoginRegister} /> */}
+          <Route path={endpoints.register} exact>
+            <LoginRegister isLoginRegister="register"></LoginRegister>
+          </Route>
+          <Route path={endpoints.login} exact>
+            <LoginRegister isLoginRegister="login"></LoginRegister>
+          </Route>
+          <Route path={endpoints.register} exact component={Register} />
+          <Route path={endpoints.leagues} exact component={Leagues} />
+          <Route path={endpoints.fixtures} exact component={Fixtures} />
+          <Route path={endpoints.dataCenter} exact component={DataCenter} />
 
-        <Route path={endpoints.about} exact component={About} />
-        <Route path={endpoints.contactUs} exact component={Contact} />
-      </Switch>
+          <Route path={endpoints.about} exact component={About} />
+          <Route path={endpoints.contactUs} exact component={Contact} />
+        </Switch>
 
-      <Footer />
-    </Router>
+        <Footer />
+      </Router>
+    </Provider>
   );
 }
 
