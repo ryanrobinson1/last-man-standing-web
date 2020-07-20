@@ -1,0 +1,113 @@
+@import '../../../CssFramework/main.module.scss';
+
+.login_container {
+  $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px, 100;
+
+  @each $size in $sizes {
+    &_max_width_#{$size} {
+      @if $size == 100 {
+        $size: $size#{$per};
+      }
+
+      display: grid;
+      max-width: $size;
+      margin: auto;
+    }
+  }
+}
+
+.login_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  $sizes: 10px, 15px, 20px, 25px, 30px 50px;
+  @each $size in $sizes {
+    &.grid_gap_#{$size} {
+      grid-gap: $size;
+    }
+  }
+}
+
+.login_col_12 {
+  grid-column: span 12;
+}
+
+.form_grid {
+  display: grid;
+}
+
+.login_padding_all_50px {
+  padding: 50px;
+}
+
+.login_margin_all_50px {
+  margin: 50px;
+}
+
+.remove_desktop {
+  display: none;
+}
+
+.login_border_control {
+  @each $radii in $radius-border {
+    &_left_#{$radii} {
+      border-style: solid;
+      border-width: thin;
+      border-color: transparent;
+
+      border-bottom-left-radius: $radii;
+      border-top-left-radius: $radii;
+    }
+
+    &_right_#{$radii} {
+      border-style: solid;
+      border-width: thin;
+      border-color: transparent;
+
+      border-bottom-right-radius: $radii;
+      border-top-right-radius: $radii;
+    }
+  }
+}
+
+.login_img_center {
+  background-color: red;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .login_padding_all_50px {
+    padding: 10px;
+  }
+
+  .login_margin_all_50px {
+    margin: 10px;
+  }
+
+  .remove_mobile {
+    display: none;
+  }
+
+  .login_border_control {
+    @each $radii in $radius-border {
+      &_left_#{$radii} {
+        border-style: solid;
+        border-width: thin;
+        border-color: transparent;
+
+        border-radius: $radii;
+      }
+
+      &_right_#{$radii} {
+        border-style: solid;
+        border-width: thin;
+        border-color: transparent;
+
+        border-radius: $radii;
+      }
+    }
+  }
+}

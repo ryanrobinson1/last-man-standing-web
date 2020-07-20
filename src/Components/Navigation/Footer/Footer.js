@@ -1,9 +1,9 @@
-import React from "react";
-import classes from "./Footer.module.scss";
-import { Link } from "react-router-dom";
-import menu from "../../../logo.svg";
+import React from 'react';
+import classes from './Footer.module.scss';
+import { Link } from 'react-router-dom';
+import menu from '../../../logo.svg';
 
-import endpoints from "../../../utilities/utils";
+import { routes } from '../../../utilities/utils';
 
 function Footer() {
   return (
@@ -14,21 +14,19 @@ function Footer() {
             <div className={`${classes.row}`}>
               <div className={`${classes.col_12}`}>
                 <div className={`${classes.footer_container}`}>
-                  <div
-                    className={`${classes.footer_row} ${classes.grid_gap_10px}`}
-                  >
+                  <div className={`${classes.footer_row} ${classes.grid_gap_10px}`}>
                     <ul>
                       <li>
-                        <Link to={endpoints.privacyPolicy}>Privacy Policy</Link>
+                        <Link to={routes.privacyPolicy}>Privacy Policy</Link>
                       </li>
                       <li>
-                        <Link to={endpoints.termsOfUse}>Terms of use</Link>
+                        <Link to={routes.termsOfUse}>Terms of use</Link>
                       </li>
                       <li>
-                        <Link to={endpoints.contactUs}>Contact Us</Link>
+                        <Link to={routes.contactUs}>Contact Us</Link>
                       </li>
                       <li>
-                        <Link to={endpoints.about}>About</Link>
+                        <Link to={routes.about}>About</Link>
                       </li>
                     </ul>
                   </div>

@@ -1,4 +1,9 @@
-import { SET_ALERT, REMOVE_ALERT } from "../Actions/types";
+import {
+  SET_ALERT,
+  REMOVE_ALERT,
+  AUTH_FAILURE,
+  AUTH_SUCCESS,
+} from "../Actions/types";
 
 export default function loginReducer(state = [], action) {
   const { type, payload } = action;

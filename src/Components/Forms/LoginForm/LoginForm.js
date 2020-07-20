@@ -1,31 +1,21 @@
-import React, { Fragment, useState } from "react";
-import classes from "./LoginForm.module.scss";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState } from 'react';
+import classes from './LoginForm.module.scss';
+import { Link } from 'react-router-dom';
 
-import endpoints from "../../../utilities/utils";
-import FormGroup from "../FormGroup";
+import routes from '../../../utilities/utils';
+import FormGroup from '../FormGroup';
 
 function LoginForm() {
   return (
     <Fragment>
-      <form
-        className={`${classes.row_columns_1} ${classes.row_grid_gap_20px} `}
-      >
+      <form className={`${classes.row_columns_1} ${classes.row_grid_gap_20px} `}>
         <h1 className={`${classes.center_align}`}>Login</h1>
 
         <FormGroup labelName="Email" inputName="email" inputType="Text" />
 
-        <FormGroup
-          labelName="Password"
-          inputName="password"
-          inputType="password"
-        />
+        <FormGroup labelName="Password" inputName="password" inputType="password" />
 
-        <input
-          className={`${classes.btn} ${classes.btn_primary}`}
-          name="submit"
-          type="submit"
-        ></input>
+        <input className={`${classes.btn} ${classes.btn_primary}`} name="submit" type="submit"></input>
       </form>
     </Fragment>
   );

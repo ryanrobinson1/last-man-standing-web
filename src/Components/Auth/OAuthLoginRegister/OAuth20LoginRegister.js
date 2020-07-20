@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './LoginRegister.module.scss';
+import classes from './OAuth20LoginRegister.module.scss';
 import { Link } from 'react-router-dom';
 import menu from '../../../logo.svg';
 import image from '../../../res/Milk.png';
@@ -17,21 +17,21 @@ import OAuth20Form from '../../Forms/OAuth20/OAuth20';
 
 let loginState = '';
 
-function LoginRegister(props) {
+function OAuth20LoginRegister(props) {
   const { setAlert, isLoginRegister, auth, register } = props;
 
   let loginOrRegisterText = '';
 
-  const loginOrRegister = () => {
-    if (isLoginRegister === 'login') {
-      loginOrRegisterText = 'login';
-      // return <LoginForm />;
-      return <OAuth20Form />;
-    } else {
-      loginOrRegisterText = 'register';
-      return <RegisterForm />;
-    }
-  };
+  //   const loginOrRegister = () => {
+  //     if (isLoginRegister === 'login') {
+  //       loginOrRegisterText = 'login';
+  //       // return <LoginForm />;
+  //       return;
+  //     } else {
+  //       loginOrRegisterText = 'register';
+  //       return <RegisterForm />;
+  //     }
+  //   };
 
   const sendAlertSuccess = () => {
     setAlert('cunt success');
@@ -52,7 +52,7 @@ function LoginRegister(props) {
 
   return (
     <div id={loginOrRegisterText}>
-      <Link className={`${classes.btn} ${classes.btn_primary}`} onClick={sendAlertSuccess}>
+      {/* <Link className={`${classes.btn} ${classes.btn_primary}`} onClick={sendAlertSuccess}>
         send alert: success
       </Link>
       <Link className={`${classes.btn} ${classes.btn_danger}`} onClick={sendAlertFailure}>
@@ -61,8 +61,7 @@ function LoginRegister(props) {
 
       <Link className={`${classes.btn} ${classes.btn_dark}`} onClick={registerUser}>
         Register user
-      </Link>
-      {showLoggedInDashboard()}
+      </Link> */}
       <div className={`${classes.container_max_width_100} ${classes.bg_light_grey}`}>
         <div className={`${classes.container_max_width_1280px}`}>
           <div className={`${classes.row_columns_12} ${classes.login_margin_all_50px}`}>
@@ -79,7 +78,7 @@ function LoginRegister(props) {
                 <div
                   className={`${classes.col_1}  ${classes.bg_primary} ${classes.login_border_control_right_25px} ${classes.login_padding_all_50px}`}
                 >
-                  {loginOrRegister()}
+                  <OAuth20Form />
                 </div>
               </div>
             </div>
@@ -99,4 +98,4 @@ export default connect(mapStateToProps, {
   setAlert: setAlert,
   // auth: auth,
   // register,
-})(LoginRegister);
+})(OAuth20LoginRegister);

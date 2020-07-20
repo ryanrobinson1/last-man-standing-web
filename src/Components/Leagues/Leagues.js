@@ -1,9 +1,9 @@
-import React from "react";
-import classes from "./Leagues.module.scss";
-import { Link } from "react-router-dom";
-import menu from "../../logo.svg";
+import React from 'react';
+import classes from './Leagues.module.scss';
+import { Link } from 'react-router-dom';
+import menu from '../../logo.svg';
 
-import endpoints from "../../utilities/utils";
+import routes from '../../utilities/utils';
 
 function Leagues() {
   return (

@@ -1,10 +1,10 @@
-@import "../../CssFramework/main.module.scss";
+@import '../../CssFramework/main.module.scss';
 
 .navbar_container {
   display: grid;
   $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
   @each $size in $sizes {
-    @if $size == "100" {
+    @if $size == '100' {
       $size: $size#{$per};
     }
     &_max_width_#{$size} {
@@ -17,7 +17,7 @@
 
 .navbar_row {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   $sizes: 10px, 15px, 20px, 25px, 30px 50px;
   @each $size in $sizes {
     &.grid_gap_#{$size} {

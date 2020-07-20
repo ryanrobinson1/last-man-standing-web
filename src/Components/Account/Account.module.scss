@@ -1,0 +1,17 @@
+@import '../../CssFramework/main.module.scss';
+
+.loginForm_label {
+  // white-space: nowrap;
+  color: white;
+  background-color: $bg-grey;
+  padding: 8px;
+  width: 100px;
+  height: 40px;
+}
+
+.loginForm_input {
+  background-color: $bg-light-grey;
+  border-color: transparent;
+  padding: 8px;
+  width: 100%;
+}
