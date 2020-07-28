@@ -1,0 +1,77 @@
+@import '../../CssFramework/main.module.scss';
+
+.fixture_card_container {
+  display: grid;
+  max-width: 100%;
+  margin: auto;
+}
+
+.fixture_card_row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  //   height: 500px
+}
+
+.fixture_card_button {
+  display: block;
+  margin: 10px auto 0px auto;
+}
+
+.fixture_bg_color {
+  background-color: whitesmoke;
+}
+
+.fixture_badgeImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // width: 250px;
+  // height: 250px;
+  // margin: auto;
+}
+
+.fixture_center_align {
+  text-align: center;
+}
+
+.fixture_venue {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.fixture_time {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.fixture_date {
+  margin-top: 1px;
+  text-align: center;
+}
+.fixture_margin_all_20px {
+  margin: 20px;
+}
+.fixture_margin_all_10px {
+  margin: 10px;
+}
+.fixture_margin_all_5px {
+  margin: 5px;
+}
+.fixture_score {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 52.6px; /* The same as your div height */
+}
+
+.fixture_padding {
+  padding: 15px 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  //   .card_row {
+  //     display: grid;
+  //     grid-template-columns: 1fr;
+  //     background-color: green;
+  //   }
+}

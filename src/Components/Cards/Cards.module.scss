@@ -1,4 +1,4 @@
-@import "../../CssFramework/main.module.scss";
+@import '../../CssFramework/main.module.scss';
 
 .card {
   display: grid;
@@ -9,6 +9,18 @@
 .card_row {
   display: grid;
   grid-template-columns: 1fr;
+}
+
+.card_height {
+  $sizes: 50px, 100px, 150px, 200px, 300px, 400px, 500px, 750px, 100;
+  @each $size in $sizes {
+    &_#{$size} {
+      @if $size == 100 {
+        $size: $size#{$per};
+      }
+      height: $size;
+    }
+  }
 }
 
 .card_button {

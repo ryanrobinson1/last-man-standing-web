@@ -1,0 +1,9 @@
+    <div className={`${classes.container_max_width_100} ${classes.bg_light_grey}`}>
+      <div className={`${classes.container_max_width_1280px}`}>
+        <div className={`${classes.row_columns_12} ${classes.login_margin_all_50px}`}>
+          <div className={`${classes.col_2}`}> gutter </div>
+          <div className={`${classes.col_8}`}></div>
+          <div className={`${classes.col_2}`}> gutter</div>
+        </div>
+      </div>
+    </div>

@@ -1,4 +1,4 @@
-@import "./utilities.module.scss";
+@import './utilities.module.scss';
 
 .bg {
   &_off_white {
@@ -19,5 +19,9 @@
 
   &_light_grey {
     background-color: $bg-light-grey;
+  }
+
+  &_white {
+    background-color: $bg-white;
   }
 }

@@ -12,7 +12,6 @@ export function isAuthReducer(state = {}, action) {
 
   switch (type) {
     case AUTHENTICATED_SUCCESS:
-      // console.log('in auth reducer.. success type. this is the payload   ', payload);
       return { ...state, isAuthenticated: true, isLoading: false, user: payload };
     case AUTHENTICATED_FAILURE:
       cookie.remove('access_token');

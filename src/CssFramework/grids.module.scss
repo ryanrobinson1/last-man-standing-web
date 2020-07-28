@@ -1,4 +1,4 @@
-@import "./properties.module.scss";
+@import './properties.module.scss';
 
 $max-width: 769px;
 
@@ -30,8 +30,7 @@ $max-width: 769px;
 }
 
 .container_width {
-  $sizes: 0px, 100px, 200px, 250px, 300px, 350px, 400px, 450px, 500px, 750px,
-    1000px;
+  $sizes: 0px, 100px, 200px, 250px, 300px, 350px, 400px, 450px, 500px, 750px, 1000px;
   @each $size in $sizes {
     &_#{$size} {
       width: $size;
@@ -67,8 +66,7 @@ $max-width: 769px;
 }
 
 .container_row_height {
-  $sizes: 50px, 60px, 70px, 80px, 90px, 100px, 110px, 120px, 130px, 140px, 150px,
-    160px, 100;
+  $sizes: 50px, 60px, 70px, 80px, 90px, 100px, 110px, 120px, 130px, 140px, 150px, 160px, 100;
   @each $size in $sizes {
     &_#{$size} {
       @if $size == 100 {
@@ -86,6 +84,10 @@ $max-width: 769px;
 
 .col_12 {
   grid-column: span 12;
+}
+
+.col_10 {
+  grid-column: span 10;
 }
 
 .col_8 {
@@ -119,7 +121,7 @@ $max-width: 769px;
 @media only screen and (max-width: 700px) {
   .container {
     $sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
-    $per: "%";
+    $per: '%';
     @each $size in $sizes {
       &.container_max_width_#{$size} {
         max-width: 90%;
@@ -175,6 +177,7 @@ $max-width: 769px;
   // }
 
   .col_12,
+  .col_10,
   .col_8,
   .col_6,
   .col_4,

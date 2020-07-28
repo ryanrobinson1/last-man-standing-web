@@ -1,8 +1,8 @@
-import React from "react";
-import classes from "./Cards.module.scss";
-import { Link } from "react-router-dom";
-import testImage from "../../logo.svg";
-import lmsImage from "../../Components/Main/Homepage/last-man-standing.png";
+import React from 'react';
+import classes from './Cards.module.scss';
+import { Link } from 'react-router-dom';
+import testImage from '../../logo.svg';
+import lmsImage from '../../Components/Main/Homepage/last-man-standing.png';
 
 function Cards(props) {
   return (
@@ -19,19 +19,13 @@ function Cards(props) {
         `}
       >
         <img className={`${classes.img_full}`} src={lmsImage}></img>
-        <div
-          className={`${classes.border_bottom_1px} ${classes.margin_top_15px}`}
-        ></div>
+        <div className={`${classes.border_bottom_1px} ${classes.margin_top_15px}`}></div>
         <h1>Title: Card</h1>
         <p>
-          description: n one column card, this is being controlled by the main
-          grid container which we have set to be 1 column, we will need to
-          change this later
+          description: n one column card, this is being controlled by the main grid container which we have set to be 1
+          column, we will need to change this later
         </p>
-        <Link
-          className={`${classes.btn} ${classes.btn_warning} ${classes.card_button}`}
-          to="#"
-        >
+        <Link className={`${classes.btn} ${classes.btn_warning} ${classes.card_button}`} to="#">
           Read More
         </Link>
       </div>

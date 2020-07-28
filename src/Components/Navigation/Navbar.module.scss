@@ -17,7 +17,7 @@
 
 .navbar_row {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   $sizes: 10px, 15px, 20px, 25px, 30px 50px;
   @each $size in $sizes {
     &.grid_gap_#{$size} {

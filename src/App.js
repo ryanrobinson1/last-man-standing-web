@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
-import { routes } from './utilities/utils';
+import { routes, endpoints } from './utilities/utils';
 
 //redux
 import store from './Store/store';
@@ -10,6 +10,10 @@ import { Provider } from 'react-redux';
 
 //alerts
 import Alerts from './Components/Alerts/Alerts';
+
+//actions
+import { isAuthenticated } from './Actions/isAuthenticated';
+import { currentGameWeekAction } from './Actions/currentGameWeekAction';
 
 //header and footer
 import Navbar from './Components/Navigation/Navbar';
@@ -23,12 +27,21 @@ import LoginRegister from './Components/Auth/Login/LoginRegister';
 import Register from './Components/Auth/Register/Register';
 import Leagues from './Components/Leagues/Leagues';
 import Fixtures from './Components/Fixtures/Fixtures';
+import Results from './Components/Results/Results';
 import DataCenter from './Components/DataCenter/DataCenter';
 
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 
-function App() {
+function App(props) {
+  useEffect(() => {
+    // console.log('check auth state here');
+    // store.dispatch(isAuthenticated());
+    // console.log('dispatched the isAuth action');
+
+    store.dispatch(currentGameWeekAction());
+  }, []);
+
   return (
     <Provider store={store}>
       <Router>
@@ -49,7 +62,8 @@ function App() {
           </Route> */}
           {/* <Route path={routes.register} exact component={Register} /> */}
           <Route path={routes.leagues} exact component={Leagues} />
-          <Route path={routes.fixtures} exact component={Fixtures} />
+          <Route path={routes.currentFixtures} exact component={Fixtures} />
+          <Route path={routes.results} exact component={Results} />
           <Route path={routes.dataCenter} exact component={DataCenter} />
 
           <Route path={routes.about} exact component={About} />
