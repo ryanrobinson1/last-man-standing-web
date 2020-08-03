@@ -4,12 +4,12 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 //CSS IMPORT
-import classes from './Loading.module.scss';
+import classes from './Injuries.module.scss';
 
 //UTILS IMPORT
 import { endpoints, routes } from '../../utilities/utils';
 
-function NAME (props) {
+function Injuries(props) {
   let [state, setState] = useState('');
   let [variableThatWillTriggerNewAPICall, setVariableThatWillTriggerNewAPICall] = useState('');
   const history = useHistory();
@@ -42,7 +42,7 @@ function NAME (props) {
   const stuff = () => {
     return (
       <>
-        <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>stuff</div>
+        <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>injuries</div>
       </>
     );
   };
@@ -60,4 +60,4 @@ const mapStateToProps = (state) => {
   return { reduxStoreStateYouWantVariableName: state.reduxStoreStateYouWant };
 };
 
-export default connect(mapStateToProps)(NAME);
+export default connect(mapStateToProps)(Injuries);

@@ -1,13 +1,11 @@
-@import '../../../CssFramework/main.module.scss';
-
-.mobile_container_margin {
+.container {
   display: grid;
+  max-width: 100%;
+  margin: auto;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.container_max_width_100 {
+  max-width: 100%;
 }
 
 .container_max_width_1280px {
@@ -19,10 +17,7 @@
 .row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 10px;
-}
-
-.center_align {
+  //   height: 500px
 }
 
 .col_12 {
@@ -58,9 +53,6 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .mobile_container_margin {
-    margin-top: 50px;
-  }
   .container {
     max-width: 90%;
   }

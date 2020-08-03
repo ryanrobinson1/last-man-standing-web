@@ -1,13 +1,26 @@
-@import '../../../CssFramework/main.module.scss';
+.border_bottom {
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  // border-radius: 10px;
+  border-bottom-color: grey;
+}
 
-.mobile_container_margin {
-  display: grid;
+//flex
+
+.flex_container {
+  display: flex;
+  // flex-direction: column;
+  // justify-content: start;
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: grid;
+  max-width: 100%;
+  margin: auto;
+}
+
+.container_max_width_100 {
+  max-width: 100%;
 }
 
 .container_max_width_1280px {
@@ -19,10 +32,7 @@
 .row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 10px;
-}
-
-.center_align {
+  //   height: 500px
 }
 
 .col_12 {
@@ -58,9 +68,6 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .mobile_container_margin {
-    margin-top: 50px;
-  }
   .container {
     max-width: 90%;
   }

@@ -11,7 +11,7 @@ import astonVillaBadge from '../../res/footballIcons/PremierLeauge_19:20/Aston-V
 function FixtureCard(props) {
   const dateRow = () => {
     return (
-      <div className={`${classes.fixture_card_row}`}>
+      <div className={`${classes.row}`}>
         <div className={`${classes.col_1}`}></div>
         <div className={`${classes.col_10}`}>
           <h3 className={`${classes.fixture_date}`}>{props.fixtureDate}</h3>
@@ -23,7 +23,7 @@ function FixtureCard(props) {
 
   const teamNamesRow = () => {
     return (
-      <div className={`${classes.fixture_card_row} ${classes.fixture_margin_all_10px}`}>
+      <div className={`${classes.row} ${classes.fixture_margin_all_10px}`}>
         <div className={`${classes.col_1}`}></div>
         <div className={`${classes.col_4}`}>
           <h1 className={`${classes.fixture_center_align}`}>{props.homeTeam}</h1>
@@ -34,7 +34,7 @@ function FixtureCard(props) {
           </div>
         </div>
         <div className={`${classes.col_4}`}>
-          <h1 className={`${classes.fixture_center_align}`}>{props.awayTeam}</h1>
+          <h1 className={`${classes.center_align}`}>{props.awayTeam}</h1>
         </div>
         <div className={`${classes.col_1}`}></div>
       </div>
@@ -43,7 +43,7 @@ function FixtureCard(props) {
 
   const teamBadgeRow = () => {
     return (
-      <div className={`${classes.fixture_card_row}`}>
+      <div className={`${classes.row}`}>
         <div className={`${classes.col_1}`}></div>
         <div className={`${classes.col_4}`}>
           <div className={`${classes.fixture_badgeImg}`}>
@@ -64,10 +64,10 @@ function FixtureCard(props) {
   };
   const formAndResultsRow = () => {
     return (
-      <div className={`${classes.fixture_card_row}`}>
+      <div className={`${classes.row}`}>
         <div className={`${classes.col_1}`}></div>
         <div className={`${classes.col_4}`}>
-          <h1 className={`${classes.fixture_center_align}`}>home team form bar</h1>
+          <h1 className={`${classes.center_align}`}>home team</h1>
         </div>
 
         <div className={`${classes.col_1} ${classes.border_thin_radius_6px} ${classes.bg_white} ${classes.fixture_margin_all_5px}`}>
@@ -77,7 +77,7 @@ function FixtureCard(props) {
           <h4 className={`${classes.fixture_score}`}>{props.awayScore}</h4>
         </div>
         <div className={`${classes.col_4}`}>
-          <h1 className={`${classes.fixture_center_align}`}>away team form bar</h1>
+          <h1 className={`${classes.fixture_center_align}`}>away team</h1>
         </div>
         <div className={`${classes.col_1}`}></div>
       </div>
@@ -86,7 +86,7 @@ function FixtureCard(props) {
 
   const cardLayout = () => {
     return (
-      <div className={`${classes.fixture_card_container}`}>
+      <div className={`${classes.container} ${classes.fixture_margin_all_10pxXXXX}`}>
         {dateRow()}
         {teamNamesRow()}
         {teamBadgeRow()}
@@ -98,7 +98,7 @@ function FixtureCard(props) {
   return (
     <div className={`${classes.container_max_width_100} ${classes.bg_off_white} `}>
       <div className={`${classes.container_max_width_1280px}`}>
-        <div className={`${classes.row_columns_12} ${classes.fixture_margin_all_10px} ${classes.border_thin_radius_6px} ${classes.box_shadow_1px}`}>
+        <div className={`${classes.row} ${classes.fixture_margin_y_10px} ${classes.border_thin_radius_6px} ${classes.box_shadow_1px}`}>
           <div className={`${classes.col_1}`}> gutter </div>
           <div className={`${classes.col_10} ${classes.fixture_padding}`}>
             <div>{cardLayout()}</div>

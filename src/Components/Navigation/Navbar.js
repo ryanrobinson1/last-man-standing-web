@@ -64,10 +64,16 @@ function Navbar(props) {
                         <Link to={`${routes.resultsBaseURL}/${props.currentGameWeek.gameWeek}.html`}>Results</Link>
                       </div>
                       <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
+                        <Link to={`${routes.leagueTable}`}>League Table</Link>
+                      </div>
+                      <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
                         <Link to={routes.dataCenter}>Data</Link>
                       </div>
                       <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
                         <Link to={routes.account}>Account</Link>
+                      </div>
+                      <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
+                        <Link to={routes.injuries}>Injuries</Link>
                       </div>
                       <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
                         <a href={endpoints.logout} className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>

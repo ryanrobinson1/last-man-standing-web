@@ -1,189 +1,189 @@
-@import './properties.module.scss';
+// @import './properties.module.scss';
 
-$max-width: 769px;
+// $max-width: 769px;
 
-.container {
-  $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
-  @each $size in $sizes {
-    @if $size == 100 {
-      $size: $size#{$per};
-    }
-    &_max_width_#{$size} {
-      display: grid;
-      max-width: $size;
-      margin: auto;
-    }
-  }
-}
+// .container {
+//   $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
+//   @each $size in $sizes {
+//     @if $size == 100 {
+//       $size: $size#{$per};
+//     }
+//     &_max_width_#{$size} {
+//       display: grid;
+//       max-width: $size;
+//       margin: auto;
+//     }
+//   }
+// }
 
-.container_not_centered {
-  $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
-  @each $size in $sizes {
-    @if $size == 100 {
-      $size: $size#{$per};
-    }
-    &_width_#{$size} {
-      display: grid;
-      max-width: $size;
-    }
-  }
-}
+// .container_not_centered {
+//   $sizes: 512px, 1024px, 1280px, 1366px, 1440px, 1536px, 1600px, 1920px 100;
+//   @each $size in $sizes {
+//     @if $size == 100 {
+//       $size: $size#{$per};
+//     }
+//     &_width_#{$size} {
+//       display: grid;
+//       max-width: $size;
+//     }
+//   }
+// }
 
-.container_width {
-  $sizes: 0px, 100px, 200px, 250px, 300px, 350px, 400px, 450px, 500px, 750px, 1000px;
-  @each $size in $sizes {
-    &_#{$size} {
-      width: $size;
-    }
-  }
-}
+// .container_width {
+//   $sizes: 0px, 100px, 200px, 250px, 300px, 350px, 400px, 450px, 500px, 750px, 1000px;
+//   @each $size in $sizes {
+//     &_#{$size} {
+//       width: $size;
+//     }
+//   }
+// }
 
-.row {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+// .row {
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
 
-  $sizes: 10px, 15px, 20px, 25px, 30px 50px;
-  @each $size in $sizes {
-    &.grid_gap_#{$size} {
-      grid-gap: $size;
-    }
-  }
+//   $sizes: 10px, 15px, 20px, 25px, 30px 50px;
+//   @each $size in $sizes {
+//     &.grid_gap_#{$size} {
+//       grid-gap: $size;
+//     }
+//   }
 
-  $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
-  @each $column in $columns {
-    &_columns_#{$column} {
-      display: grid;
-      grid-template-columns: repeat($column, 1fr);
-    }
-  }
+//   $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+//   @each $column in $columns {
+//     &_columns_#{$column} {
+//       display: grid;
+//       grid-template-columns: repeat($column, 1fr);
+//     }
+//   }
 
-  $sizes: 10px, 15px, 20px, 25px, 30px 50px;
-  @each $size in $sizes {
-    &_grid_gap_#{$size} {
-      grid-gap: $size;
-    }
-  }
-}
+//   $sizes: 10px, 15px, 20px, 25px, 30px 50px;
+//   @each $size in $sizes {
+//     &_grid_gap_#{$size} {
+//       grid-gap: $size;
+//     }
+//   }
+// }
 
-.container_row_height {
-  $sizes: 50px, 60px, 70px, 80px, 90px, 100px, 110px, 120px, 130px, 140px, 150px, 160px, 100;
-  @each $size in $sizes {
-    &_#{$size} {
-      @if $size == 100 {
-        $size: $size#{$per};
-      }
-      height: $size;
-    }
-  }
-}
+// .container_row_height {
+//   $sizes: 50px, 60px, 70px, 80px, 90px, 100px, 110px, 120px, 130px, 140px, 150px, 160px, 100;
+//   @each $size in $sizes {
+//     &_#{$size} {
+//       @if $size == 100 {
+//         $size: $size#{$per};
+//       }
+//       height: $size;
+//     }
+//   }
+// }
 
-.row_auto_adjust {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-}
+// .row_auto_adjust {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+// }
 
-.col_12 {
-  grid-column: span 12;
-}
+// .col_12 {
+//   grid-column: span 12;
+// }
 
-.col_10 {
-  grid-column: span 10;
-}
+// .col_10 {
+//   grid-column: span 10;
+// }
 
-.col_8 {
-  grid-column: span 8;
-}
+// .col_8 {
+//   grid-column: span 8;
+// }
 
-.col_6 {
-  grid-column: span 6;
-}
+// .col_6 {
+//   grid-column: span 6;
+// }
 
-.col_4 {
-  grid-column: span 4;
-}
+// .col_4 {
+//   grid-column: span 4;
+// }
 
-.col_3 {
-  grid-column: span 3;
-}
+// .col_3 {
+//   grid-column: span 3;
+// }
 
-.col_2 {
-  grid-column: span 2;
-}
+// .col_2 {
+//   grid-column: span 2;
+// }
 
-.col_1 {
-  grid-column: span 1;
-}
+// .col_1 {
+//   grid-column: span 1;
+// }
 
-.col_flex {
-  display: flex;
-}
+// .col_flex {
+//   display: flex;
+// }
 
-@media only screen and (max-width: 700px) {
-  .container {
-    $sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
-    $per: '%';
-    @each $size in $sizes {
-      &.container_max_width_#{$size} {
-        max-width: 90%;
-      }
-    }
-  }
+// @media only screen and (max-width: 700px) {
+//   .container {
+//     $sizes: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+//     $per: '%';
+//     @each $size in $sizes {
+//       &.container_max_width_#{$size} {
+//         max-width: 90%;
+//       }
+//     }
+//   }
 
-  .container_max_height {
-    height: 100vh;
-  }
+//   .container_max_height {
+//     height: 100vh;
+//   }
 
-  .row {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(40px, 1fr));
+//   .row {
+//     display: grid;
+//     grid-template-columns: repeat(1, minmax(40px, 1fr));
 
-    $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
-    @each $column in $columns {
-      &_columns_#{$column} {
-        display: grid;
-        // grid-template-columns: repeat($column, 1fr);
-        grid-template-columns: 1fr;
-      }
-    }
-  }
+//     $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+//     @each $column in $columns {
+//       &_columns_#{$column} {
+//         display: grid;
+//         // grid-template-columns: repeat($column, 1fr);
+//         grid-template-columns: 1fr;
+//       }
+//     }
+//   }
 
-  // .row_auto_adjust {
-  //   display: grid;
-  //   grid-template-columns: repeat(4, 1fr);
-  //   background-color: rgb(213, 211, 211);
-  // }
+//   // .row_auto_adjust {
+//   //   display: grid;
+//   //   grid-template-columns: repeat(4, 1fr);
+//   //   background-color: rgb(213, 211, 211);
+//   // }
 
-  // .col_8 {
-  //   grid-column: span 4;
-  // }
-  // .col_6 {
-  //   grid-column: span 4;
-  // }
+//   // .col_8 {
+//   //   grid-column: span 4;
+//   // }
+//   // .col_6 {
+//   //   grid-column: span 4;
+//   // }
 
-  // .col_4 {
-  //   grid-column: span 4;
-  // }
+//   // .col_4 {
+//   //   grid-column: span 4;
+//   // }
 
-  // .col_3 {
-  //   grid-column: span 4;
-  // }
+//   // .col_3 {
+//   //   grid-column: span 4;
+//   // }
 
-  // .col_2 {
-  //   grid-column: span 2;
-  // }
+//   // .col_2 {
+//   //   grid-column: span 2;
+//   // }
 
-  // .col_1 {
-  //   grid-column: span 2;
-  // }
+//   // .col_1 {
+//   //   grid-column: span 2;
+//   // }
 
-  .col_12,
-  .col_10,
-  .col_8,
-  .col_6,
-  .col_4,
-  .col_3,
-  .col_2,
-  .col_1 {
-    grid-column: 1;
-  }
-}
+//   .col_12,
+//   .col_10,
+//   .col_8,
+//   .col_6,
+//   .col_4,
+//   .col_3,
+//   .col_2,
+//   .col_1 {
+//     grid-column: 1;
+//   }
+// }

@@ -52,33 +52,21 @@ function OAuth20LoginRegister(props) {
 
   return (
     <div id={loginOrRegisterText}>
-      {/* <Link className={`${classes.btn} ${classes.btn_primary}`} onClick={sendAlertSuccess}>
-        send alert: success
-      </Link>
-      <Link className={`${classes.btn} ${classes.btn_danger}`} onClick={sendAlertFailure}>
-        send alert: fail
-      </Link>
-
-      <Link className={`${classes.btn} ${classes.btn_dark}`} onClick={registerUser}>
-        Register user
-      </Link> */}
       <div className={`${classes.container_max_width_100} ${classes.bg_light_grey}`}>
         <div className={`${classes.container_max_width_1280px}`}>
-          <div className={`${classes.row_columns_12} ${classes.login_margin_all_50px}`}>
+          <div className={`${classes.row} ${classes.login_margin_all_50px}`}>
             <div className={`${classes.col_2}`}></div>
             <div className={`${classes.col_8}`}>
-              <div className={`${classes.row_columns_2} `}>
-                <div
-                  className={`${classes.col_1}  ${classes.bg_dark} ${classes.login_border_control_left_25px} ${classes.login_padding_all_50px} ${classes.remove_mobile}`}
-                >
-                  <div>
-                    <img className={`${classes.img_full}`} src={image} />
+              <div className={`${classes.container_col_8}`}>
+                <div className={`${classes.row_columns_2} `}>
+                  <div className={`${classes.col_1}  ${classes.bg_dark} ${classes.login_border_control_left_25px} ${classes.login_padding_all_50px} ${classes.remove_mobileEEE}`}>
+                    <div>
+                      <img className={`${classes.login_img_full}`} src={image} />
+                    </div>
                   </div>
-                </div>
-                <div
-                  className={`${classes.col_1}  ${classes.bg_primary} ${classes.login_border_control_right_25px} ${classes.login_padding_all_50px}`}
-                >
-                  <OAuth20Form />
+                  <div className={`${classes.col_1}  ${classes.bg_primary} ${classes.login_border_control_right_25px} ${classes.login_padding_all_50px}`}>
+                    <OAuth20Form />
+                  </div>
                 </div>
               </div>
             </div>
@@ -96,6 +84,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   setAlert: setAlert,
-  // auth: auth,
-  // register,
 })(OAuth20LoginRegister);

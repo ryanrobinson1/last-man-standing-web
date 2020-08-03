@@ -1,0 +1,84 @@
+{
+  "teams": [
+    {
+      "name": "Arsenal",
+      "mobileName": "ARS"
+    },
+    {
+      "name": "Aston Villa",
+      "mobileName": "AVL"
+    },
+    {
+      "name": "Bournemouth",
+      "mobileName": "BOU"
+    },
+    {
+      "name": "Brighton",
+      "mobileName": "BHA"
+    },
+    {
+      "name": "Burnley",
+      "mobileName": "BUR"
+    },
+    {
+      "name": "Chelsea",
+      "mobileName": "CHE"
+    },
+    {
+      "name": "Crystal Palace",
+      "mobileName": "CRY"
+    },
+    {
+      "name": "Everton",
+      "mobileName": "EVE"
+    },
+    {
+      "name": "Leicester",
+      "mobileName": "LEI"
+    },
+    {
+      "name": "Liverpool",
+      "mobileName": "LIV"
+    },
+    {
+      "name": "Manchester City",
+      "mobileName": "MCI"
+    },
+    {
+      "name": "Manchester United",
+      "mobileName": "MUN"
+    },
+    {
+      "name": "Newcastle",
+      "mobileName": "NEW"
+    },
+    {
+      "name": "Norwich",
+      "mobileName": "NOR"
+    },
+    {
+      "name": "Sheffield Utd",
+      "mobileName": "SHU"
+    },
+    {
+      "name": "Southampton",
+      "mobileName": "SOU"
+    },
+    {
+      "name": "Tottenham",
+      "mobileName": "TOT"
+    },
+    {
+      "name": "Watford",
+      "mobileName": "WAT"
+    },
+    {
+      "name": "West Ham",
+      "mobileName": "WHU"
+    },
+    {
+      "name": "Wolves",
+      "mobileName": "WOL"
+    }
+  ]
+}

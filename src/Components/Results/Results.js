@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import classes from './Results.module.scss';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import classes from './Results.module.scss';
+
+import { endpoints, routes } from '../../utilities/utils';
 import FixtureCard from '../Cards/FixtureCard';
 import { formatTime, formatScoreLines } from '../Cards/FixtureCard';
-import { endpoints, routes } from '../../utilities/utils';
+import Loading from '../Loading/Loading';
 
 function Results(props) {
   let [fixtures, setFixtures] = useState([]);
-  let [current, setCurrent] = useState(0);
-  let [prev, setPrev] = useState(1);
-  let [next, setNext] = useState(1);
-  let [path, setPath] = useState(1);
-
+  let [current, setCurrent] = useState(props.currentGameWeek.gameWeek);
+  let [prev, setPrev] = useState(props.currentGameWeek.gameWeek);
+  let [next, setNext] = useState(props.currentGameWeek.gameWeek);
+  let [path, setPath] = useState(0);
+  let [loading, setLoading] = useState(true);
   const history = useHistory();
   const params = useParams();
 
   useEffect(() => {
     setPath(params.gameWeek);
-    setCurrent(params.gameWeek);
+    setCurrent(props.currentGameWeek.gameWeek);
     setNext(parseInt(params.gameWeek) + 1);
     setPrev(parseInt(params.gameWeek) - 1);
-  }, []);
+    setLoading(true);
+  }, [props.currentGameWeek.gameWeek]);
 
   useEffect(() => {
     const apiCall = async () => {
@@ -36,10 +39,15 @@ function Results(props) {
         let response = await fetch(`${endpoints.premierLeagueResultsFixturesActiveSeason}/${path}`, requestOptions);
         let data = await response.json();
         setFixtures(data);
+        setLoading(false);
       } catch (error) {
         console.log('fixtures API call failed');
       }
     };
+
+    // setTimeout(() => {
+    //   apiCall();
+    // }, 5000);
 
     apiCall();
   }, [path]); //when page url changes we need to update.. so have to watch for the param name ?? or uRL?
@@ -92,26 +100,47 @@ function Results(props) {
     history.push(`${routes.resultsBaseURL}/${currentActiveGameWeek}.html`);
   };
 
-  return (
-    <div className={`${classes.container_max_width_1280px}`}>
-      <div className={`${classes.row} ${classes.center_align}}`}>
-        <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>
-          <Link onClick={LoadPrevGameWeek}> Prev GW {prev}</Link>
-        </div>
-        <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>
-          <Link onClick={LoadCurrentActiveGameWeek}> Current Active GW {current}</Link>
-        </div>
-        <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>
-          <Link onClick={LoadNextGameWeek}> Next GW {next}</Link>
-        </div>
-      </div>
-      <div className={`${classes.row} ${classes.center_align}}`}>
-        <div className={`${classes.col_12}`}>
-          <ul>{createFixturesForGameWeek()}</ul>
-        </div>
-      </div>
-    </div>
-  );
+  const navigation = () => {
+    return (
+      <>
+        {/* {checkIfPrevGameWeekIsAvailable()} */}
+        <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>{<Link onClick={LoadPrevGameWeek}> Prev GW {prev}</Link>}</div>
+        <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>{<Link onClick={LoadCurrentActiveGameWeek}> Current Active GW {current}</Link>}</div>
+        {/* {checkIfNextGameWeekIsAvailable()} */}
+        <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>{<Link onClick={LoadNextGameWeek}> Next GW {next}</Link>}</div>
+      </>
+    );
+  };
+
+  const isLoading = () => {
+    if (loading === true) {
+      return (
+        <>
+          <div className={`${classes.row} ${classes.center_align}}`}>
+            <div className={`${classes.col_12}`}>
+              <Loading type="spinningBubbles" color="grey" height="50vh" width="100px" />
+            </div>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className={`${classes.row} ${classes.center_align}}`}>
+            <div className={`${classes.results_flex_container} ${classes.navigation_border} ${classes.navigation_border_box_shadow}`}>{navigation()}</div>
+          </div>
+          <div className={`${classes.row} ${classes.center_align}}`}>
+            <div className={`${classes.col_12}`}>
+              <ul>{createFixturesForGameWeek()}</ul>
+              {/* {loading === true ? <Loading type="spinningBubbles" color="grey" height="50vh" width="100px" /> : <ul>{createFixturesForGameWeek()}</ul>} */}
+            </div>
+          </div>
+        </>
+      );
+    }
+  };
+
+  return <div className={`${classes.container_max_width_1280px}`}>{isLoading()}</div>;
 }
 
 const mapStateToProps = (state) => {
@@ -119,3 +148,25 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(Results);
+// const checkIfPrevGameWeekIsAvailable = () => {
+//   if (current > 1) {
+//     return (
+//       <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>
+//         <Link onClick={LoadPrevGameWeek}> Prev GW {prev}</Link>
+//       </div>
+//     );
+//   }
+// };
+
+// const checkIfNextGameWeekIsAvailable = () => {
+//   if (current <= 37) {
+//     return (
+//       <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary}`}>
+//         <Link onClick={LoadNextGameWeek}> Next GW {next}</Link>
+//       </div>
+//     );
+//   }
+//   // else {
+//   //   return <div className={`${classes.col_1} ${classes.btn} ${classes.game_week_not_available}`}>Next Next Next</div>;
+//   // }
+// };

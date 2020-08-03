@@ -8,8 +8,9 @@ import classes from './Loading.module.scss';
 
 //UTILS IMPORT
 import { endpoints, routes } from '../../utilities/utils';
+import ReactLoading from 'react-loading';
 
-function NAME (props) {
+function Loading(props) {
   let [state, setState] = useState('');
   let [variableThatWillTriggerNewAPICall, setVariableThatWillTriggerNewAPICall] = useState('');
   const history = useHistory();
@@ -48,9 +49,25 @@ function NAME (props) {
   };
 
   return (
-    <div className={`${classes.container_max_width_1280px}`}>
-      <div className={`${classes.row} ${classes.center_align}}`}>
-        <div className={`${classes.col_12}`}>{stuff()}</div>
+    // <div className={`${classes.container_max_width_1280px}`}>
+    //   <div className={`${classes.row} ${classes.center_align}}`}>
+    //     <div className={`${classes.col_12}`}>
+    //       LOADING component
+    //       <ReactLoading type={props.type} color={props.color} height={'20%'} width={'20%'} />
+    //     </div>
+    //   </div>
+    // </div>
+
+    <div className={`${classes.container_max_width_1280px} ${classes.margin_y_50px}`}>
+      <div className={`${classes.row} `}>
+        <div className={`${classes.col_12} ${classes.fixture_padding}`}>
+          <div className={`${classes.loading_flex_container} ${classes.loading_border} ${classes.loading_border_box_shadow}`}>
+            <div className={`${classes.loading_flex_item}`}>
+              {/* <ReactLoading type={props.type} color={props.color} height={props.height} width={props.width} /> */}
+              <ReactLoading type="spinningBubbles" color="grey" height="50vh" width="100px" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -60,4 +77,4 @@ const mapStateToProps = (state) => {
   return { reduxStoreStateYouWantVariableName: state.reduxStoreStateYouWant };
 };
 
-export default connect(mapStateToProps)(NAME);
+export default connect(mapStateToProps)(Loading);

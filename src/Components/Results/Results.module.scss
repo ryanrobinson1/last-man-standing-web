@@ -3,3 +3,76 @@
 ul {
   display: block;
 }
+
+.results_flex_container {
+  grid-column: span 12;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.navigation_border {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 10px;
+  border-color: transparent;
+}
+
+.navigation_border_box_shadow {
+  box-shadow: 1px 1px 10px -4px $box-shadow-grey;
+}
+
+.game_week_not_available {
+  color: transparent;
+}
+
+.container_max_width_1280px {
+  display: grid;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+}
+
+.center_align {
+}
+
+.col_12 {
+  grid-column: span 12;
+}
+
+.col_10 {
+  grid-column: span 10;
+}
+
+.col_8 {
+  grid-column: span 8;
+}
+
+.col_6 {
+  grid-column: span 6;
+}
+
+.col_4 {
+  grid-column: span 4;
+}
+
+.col_3 {
+  grid-column: span 3;
+}
+
+.col_2 {
+  grid-column: span 2;
+}
+
+.col_1 {
+  grid-column: span 1;
+}
