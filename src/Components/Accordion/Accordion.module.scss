@@ -1,10 +1,3 @@
-//change to name | numbers |
-//desktop name width = 80px | numbers width = 80px
-//mobile name width = 50px | numbers width = 35px
-//convert team names to abbreviations
-
-// @import '../../CssFramework/main.module.scss';
-
 $height: 60px;
 $line-height: 60px;
 
@@ -36,7 +29,7 @@ $line-height: 60px;
 
 //FLEX
 .flex_container {
-  display: flex;
+  display: none;
   flex-direction: row;
 
   justify-content: space-between;

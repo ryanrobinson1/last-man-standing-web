@@ -5,10 +5,11 @@ export const routes = {
   account: '/account.html',
   leagues: '/leagues.html',
   injuries: '/injuries.html',
-  currentFixtures: '/fixtures/game-week/current.html',
   resultsBaseURL: '/results/game-week',
   results: '/results/game-week/:gameWeek.html',
   leagueTable: '/league-table.html',
+  teamBase: '/team',
+  team: '/team/:teamName.html',
   privacyPolicy: '/privacy-policy.html',
   termsOfUse: '/terms-of-use.html',
   contactUs: '/contact-us.html',
@@ -24,4 +25,5 @@ export const endpoints = {
   premierLeagueResultsFixturesActiveSeason: 'http://localhost:5000/api/football/premier-league/fixtures',
   premierLeagueCurrentGameWeek: 'http://localhost:5000/api/football/premier-league/current/round',
   premierLeagueLeagueTable: 'http://localhost:5000/api/football/premier-league/league-table',
+  premierLeagueTeam: 'http://localhost:5000/api/football/premier-league/team',
 };

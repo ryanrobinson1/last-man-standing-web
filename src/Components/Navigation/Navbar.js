@@ -58,13 +58,13 @@ function Navbar(props) {
                         <Link to={routes.leagues}>Leagues</Link>
                       </div>
                       <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
-                        <Link to={`${routes.currentFixtures}`}>Fixtures</Link>
-                      </div>
-                      <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
                         <Link to={`${routes.resultsBaseURL}/${props.currentGameWeek.gameWeek}.html`}>Results</Link>
                       </div>
                       <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
                         <Link to={`${routes.leagueTable}`}>League Table</Link>
+                      </div>
+                      <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
+                        <Link to={`${routes.teamBase}/arsenal.html`}>Team</Link>
                       </div>
                       <div className={`${classes.col_1} ${classes.btn} ${classes.btn_primary} ${classes.btn_x_large}`}>
                         <Link to={routes.dataCenter}>Data</Link>

@@ -28,13 +28,15 @@ import Account from './Components/Account/Account';
 // import Register from './Components/Auth/Register/Register';
 import Leagues from './Components/Leagues/Leagues';
 import Injuries from './Components/Injuries/Injuries';
-import Fixtures from './Components/Fixtures/Fixtures';
 import Results from './Components/Results/Results';
 import LeagueTable from './Components/LeagueTable/LeagueTable';
+import TeamDetails from './Components/TeamDetails/TeamDetails';
 import DataCenter from './Components/DataCenter/DataCenter';
 
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
+
+import PageNotFound from './Components/Errors/PageNotFound/PageNotFound';
 
 function App(props) {
   useEffect(() => {
@@ -53,7 +55,6 @@ function App(props) {
     <Provider store={store}>
       <Router>
         <Navbar />
-
         <Alerts />
 
         <Switch>
@@ -62,13 +63,14 @@ function App(props) {
           <Route path={routes.login} exact component={OAuth20LoginRegister} />
           <Route path={routes.leagues} exact component={Leagues} />
           <Route path={routes.injuries} exact component={Injuries} />
-          <Route path={routes.currentFixtures} exact component={Fixtures} />
           <Route path={routes.results} exact component={Results} />
           <Route path={routes.leagueTable} exact component={LeagueTable} />
+          <Route path={routes.team} exact component={TeamDetails} />
           <Route path={routes.dataCenter} exact component={DataCenter} />
-
           <Route path={routes.about} exact component={About} />
           <Route path={routes.contactUs} exact component={Contact} />
+
+          <Route path="*" component={PageNotFound} />
         </Switch>
 
         <Footer />
