@@ -11,13 +11,12 @@ import { endpoints, routes } from '../../utilities/utils';
 
 function TeamDetails(props) {
   let [teamData, setTeamData] = useState({});
-  let [variableThatWillTriggerNewAPICall, setVariableThatWillTriggerNewAPICall] = useState('');
+  let [injuryData, setInjuryData] = useState({});
+
   const history = useHistory();
   const params = useParams();
 
-  useEffect(() => {
-    //anything we want to set on first load.. data calls etc
-  }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     const apiCall = async () => {
@@ -28,9 +27,14 @@ function TeamDetails(props) {
             'Content-type': 'application/json; charset=UTF-8',
           },
         };
-        let response = await fetch(`${endpoints.premierLeagueTeam}/Arsenal.html`, requestOptions);
-        let data = await response.json();
-        setTeamData(data);
+        let responseTeamData = await fetch(`${endpoints.premierLeagueTeam}/Arsenal.html`, requestOptions);
+        let dataTeam = await responseTeamData.json();
+        setTeamData(dataTeam);
+
+        let responseInjuryData = await fetch(`${endpoints.premierLeagueInjuries}/Arsenal.html`, requestOptions);
+        let dataInjury = await responseInjuryData.json();
+        setInjuryData(dataInjury);
+        console.log('data injury === ', dataInjury);
       } catch (error) {
         console.log('fixtures API call failed');
       }
@@ -45,14 +49,14 @@ function TeamDetails(props) {
         <h2>Injuries</h2>
         <div className={`${classes.row} ${classes.border}`}>
           <div className={`${classes.col_2}`}>
-            <img src={teamData.logo}></img>
+            <img src={injuryData.logo}></img>
           </div>
           <div className={`${classes.col_10}`}>
-            <h2>{teamData.name}</h2>
-            <h3>{teamData.venue_name}</h3>
-            <h3>{teamData.venue_address}</h3>
-            <h3>{teamData.venue_city}</h3>
-            <h3>Capacity: {teamData.venue_capacity}</h3>
+            <h2>{injuryData.name}</h2>
+            <h3>{injuryData.venue_name}</h3>
+            <h3>{injuryData.venue_address}</h3>
+            <h3>{injuryData.venue_city}</h3>
+            <h3>Capacity: {injuryData.venue_capacity}</h3>
           </div>
         </div>
       </div>
@@ -75,8 +79,6 @@ function TeamDetails(props) {
             <h3>Capacity: {teamData.venue_capacity}</h3>
           </div>
         </div>
-
-        {/* <div className={`${classes.row} ${classes.border}`}>{injuries()}</div> */}
       </div>
       <div className={`${classes.margin_injuries}`}>{injuries()}</div>
     </div>

@@ -26,4 +26,5 @@ export const endpoints = {
   premierLeagueCurrentGameWeek: 'http://localhost:5000/api/football/premier-league/current/round',
   premierLeagueLeagueTable: 'http://localhost:5000/api/football/premier-league/league-table',
   premierLeagueTeam: 'http://localhost:5000/api/football/premier-league/team',
+  premierLeagueInjuries: 'http://localhost:5000/api/football/premier-league/injuries',
 };
