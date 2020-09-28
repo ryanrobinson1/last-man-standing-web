@@ -4,5 +4,5 @@ Last Man Standing - Web
 
 Current preview of Last Man Standin - Web
 
-Home Page
+![Results Page]
 (https://github.com/ryanrobinson1/last-man-standing-web/blob/master/src/res/Previews/LMS%20-ResultsPage.png)
