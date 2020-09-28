@@ -1,6 +1,6 @@
 # Last Man Standing - Web
 
-### Currently has a dependency on secret keys with 3rd party API providers in the back-end (Last Man Standing - API) so unable to be started locally 
+Currently has a dependency on secret keys with 3rd party API providers in the back-end (Last Man Standing - API) so unable to be started locally 
 
 ### Current preview of Last Man Standin - Web
 
