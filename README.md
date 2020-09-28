@@ -4,8 +4,11 @@
 
 ### Current preview of Last Man Standin - Web
 
-#### ![Home Page](https://github.com/ryanrobinson1/last-man-standing-web/blob/master/src/res/Previews/LMS-HomePage.png)
+#### Home Page
+![Home Page](https://github.com/ryanrobinson1/last-man-standing-web/blob/master/src/res/Previews/LMS-HomePage.png)
 
-#### ![Results Page](https://github.com/ryanrobinson1/last-man-standing-web/blob/master/src/res/Previews/LMS%20-ResultsPage.png)
+#### Results Page
+![Results Page](https://github.com/ryanrobinson1/last-man-standing-web/blob/master/src/res/Previews/LMS%20-ResultsPage.png)
 
-#### ![Login Page](https://github.com/ryanrobinson1/last-man-standing-web/blob/master/src/res/Previews/LMS-Login.png)
+#### Login Page
+![Login Page](https://github.com/ryanrobinson1/last-man-standing-web/blob/master/src/res/Previews/LMS-Login.png)
